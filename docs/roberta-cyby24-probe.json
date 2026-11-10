@@ -1,0 +1,21 @@
+{
+  "model": "nayan90k/roberta-finetuned-cyberbullying-detection",
+  "revision": "a5c86fdb6aa46b7d41261907e6c6ecbb2cf66907",
+  "sha256": "9cf3d24e3d64cbad3778219fb24a3e0390a523b50b878f41a99ca0b3656e57df",
+  "threshold": 0.5,
+  "sample": "same seed-43 balanced 60-thread CYBY24 subset used for Gemma, Vigil, and MobileBERT; 30 positives and 30 negatives",
+  "thread_first_128": {
+    "tp": 17,
+    "fp": 21,
+    "tn": 9,
+    "fn": 13
+  },
+  "any_message": {
+    "tp": 27,
+    "fp": 29,
+    "tn": 1,
+    "fn": 3
+  },
+  "thread_truncated": 29,
+  "limitations": "Exploratory previously inspected public Twitter corpus, not independent or private Instagram chats; source and pretraining overlap unknown. Model trained primarily on individual messages; thread prediction and maximum-per-message are different cross-task proxies. No calibration, phone inference or network behavior measured."
+}

@@ -1,0 +1,68 @@
+{
+  "model": "modernbert",
+  "seed": 79,
+  "data": "CYBY24: thread labels 3/4 positive, 1/2 negative; prior public source used for exploration",
+  "protocol": "same raw thread prefix fits all four tokenizers and Phocinae question, 256 total tokens per model; grouped by exact message and tweet ID; 2 epochs, final two layers and head for MobileBERT/ModernBERT/Phocinae; pre-fine-tuned RoBERTa not retrained",
+  "partitions": {
+    "train": {
+      "n": 1652,
+      "positive": 365,
+      "truncated": 484
+    },
+    "calibration": {
+      "n": 549,
+      "positive": 109,
+      "truncated": 148
+    },
+    "test": {
+      "n": 551,
+      "positive": 112,
+      "truncated": 174
+    }
+  },
+  "phocinae_context_tokens": 223,
+  "threshold_policy": "on calibration, maximum precision among score thresholds achieving recall >=0.8; score is not a calibrated probability",
+  "threshold": 0.01731204055249691,
+  "development": {
+    "n": 549,
+    "positive": 109,
+    "tp": 95,
+    "fp": 249,
+    "tn": 191,
+    "fn": 14,
+    "precision": 0.2761627906976744,
+    "recall": 0.8715596330275229,
+    "f1": 0.4194260485651214,
+    "average_precision": 0.29688512946183393
+  },
+  "test": {
+    "n": 551,
+    "positive": 112,
+    "tp": 88,
+    "fp": 236,
+    "tn": 203,
+    "fn": 24,
+    "precision": 0.2716049382716049,
+    "recall": 0.7857142857142857,
+    "f1": 0.4036697247706422,
+    "average_precision": 0.3448412285884765
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "loss": 1.196135496586498,
+      "seconds": 160.02452641699347
+    },
+    {
+      "epoch": 2,
+      "loss": 1.2604387002322286,
+      "seconds": 160.6900049169999
+    }
+  ],
+  "trainable_parameters": 10031618,
+  "artifact": {
+    "path": "artifacts/cyby24-matched/modernbert.safetensors",
+    "sha256": "e7d0094ae65fed4fff7959c9d4ccefdfec75f369043fa641be876ebb26012304"
+  },
+  "limitations": "Exploratory previously inspected same-source test, not independent or Instagram; thread labels weak for message-level inference; class prevalence source-specific; cross-author and near-duplicate leakage possible; same raw prefixes but tokenization and model heads differ; pretraining and source overlap unknown; no Android measurements."
+}

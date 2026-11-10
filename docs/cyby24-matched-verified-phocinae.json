@@ -1,0 +1,13 @@
+{
+  "model": "phocinae",
+  "sample": "complete development split, batch size 4, original padding",
+  "result": "restored model and threshold reproduced development confusion counts",
+  "counts": {
+    "tp": 89,
+    "tn": 180,
+    "fp": 260,
+    "fn": 20
+  },
+  "truncated": 148,
+  "limitations": "Restore check only, not independent evaluation."
+}

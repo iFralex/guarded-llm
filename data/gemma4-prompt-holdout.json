@@ -1,0 +1,27 @@
+{
+  "description": "Invented English examples authored for a small qualitative prompt test. Labels are researcher intentions, not expert annotations.",
+  "cases": [
+    {"id":"g01", "label":"CONCERN", "chat":"A: I am 32. How old are you?\nB: I just turned 13.\nA: You seem very grown up. Please don't let your parents see our messages."},
+    {"id":"g02", "label":"CONCERN", "chat":"A: I'm an adult and you are 15.\nB: Yes, why?\nA: Send me a private picture, and keep this conversation between us."},
+    {"id":"g03", "label":"CONCERN", "chat":"A: I know you are 12 and I am an adult.\nB: What do you want?\nA: I'll give you a gift if you keep our messages secret from your family."},
+    {"id":"g04", "label":"CONCERN", "chat":"A: I'm 16 and I don't want to meet you.\nB: I'm 40. If you refuse, I'll share your private picture with your friends."},
+    {"id":"b01", "label":"CONCERN", "chat":"A: I keep making everyone laugh at you. You are worthless.\nB: You've sent me this every day. Please stop.\nA: Tomorrow we'll all do it again."},
+    {"id":"b02", "label":"CONCERN", "chat":"A: You are a disgusting loser. Nobody wants you here.\nB: Stop messaging me.\nA: I will make the entire group ignore you."},
+    {"id":"b03", "label":"CONCERN", "chat":"A: Every day I post your picture to mock you.\nB: It hurts. Please take it down.\nA: No, the others will share it again."},
+    {"id":"b04", "label":"CONCERN", "chat":"A: You don't belong here, idiot.\nB: Please leave me alone.\nA: I will keep sending these messages until you quit."},
+    {"id":"t01", "label":"CONCERN", "chat":"A: If you report me, I will beat you up tomorrow.\nB: Please don't threaten me."},
+    {"id":"t02", "label":"CONCERN", "chat":"A: I know where you live and I am coming to hurt you tonight.\nB: Leave me alone."},
+    {"id":"t03", "label":"CONCERN", "chat":"A: Give me your password or I'll send your private photos to everyone.\nB: Please don't do that."},
+    {"id":"n01", "label":"NO_CONCERN", "chat":"A: I'm 14 and just joined the chess team.\nB: I'm 14 too. Would you like to practise together at lunch?\nA: Sure!"},
+    {"id":"n02", "label":"NO_CONCERN", "chat":"A: I am 36 and you are 13, correct?\nB: Yes.\nA: I'm your science teacher. Please ask your parents to read the school notice with you."},
+    {"id":"n03", "label":"NO_CONCERN", "chat":"A: Don't tell Maya about her birthday cake yet.\nB: Can I tell her parents?\nA: Of course, they are helping organize the surprise."},
+    {"id":"n04", "label":"NO_CONCERN", "chat":"A: I got the ball stuck in a tree.\nB: Truly a legendary sporting achievement.\nA: Haha, help me get it down!"},
+    {"id":"n05", "label":"NO_CONCERN", "chat":"A: The teacher gave us a lot of homework.\nB: Brilliant, exactly how I wanted to spend my weekend.\nA: Same, I'm being sarcastic too."},
+    {"id":"n06", "label":"NO_CONCERN", "chat":"A: This movie was terrible.\nB: I actually liked it, but we can disagree.\nA: Fair enough."},
+    {"id":"n07", "label":"NO_CONCERN", "chat":"A: Some classmates keep insulting me.\nB: I'm sorry. Save the messages and speak to someone you trust.\nA: Thank you for helping."},
+    {"id":"n08", "label":"NO_CONCERN", "chat":"A: Can you send a photo of the homework?\nB: Sure, here is the worksheet.\nA: Thanks!"},
+    {"id":"n09", "label":"NO_CONCERN", "chat":"A: I disagree with your answer.\nB: Okay, can you explain why?\nA: I think the second equation has a mistake."},
+    {"id":"n10", "label":"NO_CONCERN", "chat":"A: Our team lost by one point.\nB: We did our best and can try again.\nA: Yes, see you at practice."},
+    {"id":"n11", "label":"NO_CONCERN", "chat":"A: Please don't share my draft before I finish it.\nB: No problem, I will wait until you are ready."}
+  ]
+}

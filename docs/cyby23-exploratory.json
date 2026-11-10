@@ -1,0 +1,19 @@
+{
+  "source": "CYBY23, University of Science Malaysia, https://opendata.usm.my/items/f351c23f-009f-4b8f-bba3-563f5fb1bbfd",
+  "source_sha256": "f7164c7b3d46033bb3a73e3051db7d0693668935c07222f1de997a34df483519",
+  "source_citation": "Alfurayj, Yee and Lutfi, Bystanders Unveiled, TENCON 2023, pp. 1012\u20131017; Alfurayj and Lutfi, Exploring Bystanders\u2019 Roles, TENCON 2023, pp. 1018\u20131023",
+  "protocol": "Each blank-delimited thread: positive if corpus thread label is 1 or 2; flag if any text in thread has toxic-bert toxicity >=0.5. No training or threshold tuning.",
+  "total_groups": 111,
+  "skipped_groups": 0,
+  "n": 111,
+  "positive": 73,
+  "messages": 636,
+  "truncated_messages": 0,
+  "tp": 72,
+  "fp": 32,
+  "tn": 6,
+  "fn": 1,
+  "precision": 0.6923076923076923,
+  "recall": 0.9863013698630136,
+  "limitations": "Exploratory cross-task aggregate: toxicity per message vs thread bullying label; class 0 is aggression, not normal conversation; public Twitter threads, not private Instagram; repeated responses and thread length affect max score; no author-independence or pretraining-overlap audit; no text or IDs exported; not phone inference."
+}

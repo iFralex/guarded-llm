@@ -1,0 +1,108 @@
+{
+  "development_truncation": {
+    "5": {
+      "n": 209,
+      "over_128_tokens": 4
+    },
+    "10": {
+      "n": 209,
+      "over_128_tokens": 5
+    },
+    "20": {
+      "n": 209,
+      "over_128_tokens": 48
+    }
+  },
+  "policy": "Threshold and Platt scaling fitted independently per variant using calibration only; both depend on sampled prevalence.",
+  "limitations": "Pilot sample, weak labels and possible data artifacts; no Android runtime or battery test. Quantized scores should not be treated as interchangeable with float scores.",
+  "models": {
+    "model.onnx": {
+      "bytes": 99015779,
+      "threshold": 0.7209817171096802,
+      "max_abs_probability_error_vs_float": 0.0,
+      "mean_abs_probability_error_vs_float": 0.0,
+      "development": {
+        "tp": 32,
+        "fp": 7,
+        "tn": 167,
+        "fn": 3,
+        "precision": 0.8205128205128205,
+        "recall": 0.9142857142857143,
+        "average_precision": 0.9305458093068122
+      },
+      "probability_calibration": {
+        "method": "Platt logistic scaling on calibration only; sampled prevalence",
+        "brier_raw": 0.1370499655298936,
+        "brier_platt": 0.06228373044629488,
+        "ece_10_bins_raw": 0.24017867773913884,
+        "ece_10_bins_platt": 0.08650822254071444
+      }
+    },
+    "model-int8.onnx": {
+      "bytes": 26531220,
+      "threshold": 0.7259910702705383,
+      "max_abs_probability_error_vs_float": 0.2478742003440857,
+      "mean_abs_probability_error_vs_float": 0.012780949615975886,
+      "development": {
+        "tp": 31,
+        "fp": 7,
+        "tn": 167,
+        "fn": 4,
+        "precision": 0.8157894736842105,
+        "recall": 0.8857142857142857,
+        "average_precision": 0.9248929677079941
+      },
+      "probability_calibration": {
+        "method": "Platt logistic scaling on calibration only; sampled prevalence",
+        "brier_raw": 0.14415613618895934,
+        "brier_platt": 0.06743167794975014,
+        "ece_10_bins_raw": 0.24942776040312212,
+        "ece_10_bins_platt": 0.07477251900131054
+      }
+    },
+    "model-uint8.onnx": {
+      "bytes": 26531412,
+      "threshold": 0.7176443934440613,
+      "max_abs_probability_error_vs_float": 0.14462268352508545,
+      "mean_abs_probability_error_vs_float": 0.008568488168374203,
+      "development": {
+        "tp": 32,
+        "fp": 12,
+        "tn": 162,
+        "fn": 3,
+        "precision": 0.7272727272727273,
+        "recall": 0.9142857142857143,
+        "average_precision": 0.8176030504975981
+      },
+      "probability_calibration": {
+        "method": "Platt logistic scaling on calibration only; sampled prevalence",
+        "brier_raw": 0.13896481398661878,
+        "brier_platt": 0.06404311727043896,
+        "ece_10_bins_raw": 0.24176316533647657,
+        "ece_10_bins_platt": 0.0681292136398888
+      }
+    },
+    "model-int8-per-channel.onnx": {
+      "bytes": 26996389,
+      "threshold": 0.7217469811439514,
+      "max_abs_probability_error_vs_float": 0.10914862155914307,
+      "mean_abs_probability_error_vs_float": 0.008311619598899731,
+      "development": {
+        "tp": 31,
+        "fp": 7,
+        "tn": 167,
+        "fn": 4,
+        "precision": 0.8157894736842105,
+        "recall": 0.8857142857142857,
+        "average_precision": 0.8422667649889425
+      },
+      "probability_calibration": {
+        "method": "Platt logistic scaling on calibration only; sampled prevalence",
+        "brier_raw": 0.13937672147572092,
+        "brier_platt": 0.06481624795735046,
+        "ece_10_bins_raw": 0.24132274825607192,
+        "ece_10_bins_platt": 0.08447724742523227
+      }
+    }
+  }
+}

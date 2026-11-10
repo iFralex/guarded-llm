@@ -1,0 +1,74 @@
+{
+  "model": "Phocinae/Phocinae-Largha-150M-v1",
+  "revision": "a57030322df13c8c55ab7a99b8b7b176e2c5aa85",
+  "runtime_revision": "f751d7258e50b4cd19fe3967ae184ed895ce68b5",
+  "mode": "zero-shot typed binary decision; no fine-tuning",
+  "input": "128 tokens total including instruction and options; short-input private batch/public runtime parity checked",
+  "threshold_policy": "highest score achieving >=0.9 recall on sampled calibration; not PAN-specific probability calibration",
+  "threshold": 0.23538636474297142,
+  "development": {
+    "5": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 171,
+      "tn": 3,
+      "fn": 1,
+      "precision": 0.16585365853658537,
+      "recall": 0.9714285714285714,
+      "f1": 0.2833333333333333,
+      "average_precision": 0.29413383594798004
+    },
+    "10": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 172,
+      "tn": 2,
+      "fn": 1,
+      "precision": 0.1650485436893204,
+      "recall": 0.9714285714285714,
+      "f1": 0.2821576763485477,
+      "average_precision": 0.36394343892561726
+    },
+    "20": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 172,
+      "tn": 2,
+      "fn": 1,
+      "precision": 0.1650485436893204,
+      "recall": 0.9714285714285714,
+      "f1": 0.2821576763485477,
+      "average_precision": 0.36166141067904484
+    }
+  },
+  "host_batch_timings": [
+    {
+      "window": 10,
+      "samples": 210,
+      "seconds": 3.4283675419999327,
+      "batch_size": 4
+    },
+    {
+      "window": 5,
+      "samples": 209,
+      "seconds": 2.7471779580000657,
+      "batch_size": 4
+    },
+    {
+      "window": 10,
+      "samples": 209,
+      "seconds": 3.4733316249999007,
+      "batch_size": 4
+    },
+    {
+      "window": 20,
+      "samples": 209,
+      "seconds": 3.6876537499999813,
+      "batch_size": 4
+    }
+  ],
+  "limitations": "Prompt-dependent zero-shot probe; weak author labels, sampled data, source/decoy bias, partial near-deduplication, unknown pretraining overlap, possible private runtime API drift; no phone evaluation or official PAN12 test."
+}

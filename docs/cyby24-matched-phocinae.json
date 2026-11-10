@@ -1,0 +1,68 @@
+{
+  "model": "phocinae",
+  "seed": 79,
+  "data": "CYBY24: thread labels 3/4 positive, 1/2 negative; prior public source used for exploration",
+  "protocol": "same raw thread prefix fits all four tokenizers and Phocinae question, 256 total tokens per model; grouped by exact message and tweet ID; 2 epochs, final two layers and head for MobileBERT/ModernBERT/Phocinae; pre-fine-tuned RoBERTa not retrained",
+  "partitions": {
+    "train": {
+      "n": 1652,
+      "positive": 365,
+      "truncated": 484
+    },
+    "calibration": {
+      "n": 549,
+      "positive": 109,
+      "truncated": 148
+    },
+    "test": {
+      "n": 551,
+      "positive": 112,
+      "truncated": 174
+    }
+  },
+  "phocinae_context_tokens": 223,
+  "threshold_policy": "on calibration, maximum precision among score thresholds achieving recall >=0.8; score is not a calibrated probability",
+  "threshold": 0.02519083023071289,
+  "development": {
+    "n": 549,
+    "positive": 109,
+    "tp": 89,
+    "fp": 260,
+    "tn": 180,
+    "fn": 20,
+    "precision": 0.25501432664756446,
+    "recall": 0.8165137614678899,
+    "f1": 0.388646288209607,
+    "average_precision": 0.3298003866625834
+  },
+  "test": {
+    "n": 551,
+    "positive": 112,
+    "tp": 96,
+    "fp": 260,
+    "tn": 179,
+    "fn": 16,
+    "precision": 0.2696629213483146,
+    "recall": 0.8571428571428571,
+    "f1": 0.41025641025641024,
+    "average_precision": 0.33927324996524244
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "loss": 1.0350023252476845,
+      "seconds": 91.58161712500441
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0041660335784233,
+      "seconds": 90.64180787500663
+    }
+  ],
+  "trainable_parameters": 7534849,
+  "artifact": {
+    "path": "artifacts/cyby24-matched/phocinae.safetensors",
+    "sha256": "c8865875d9f0e5368179c6d0061a200f9005550c6ba7a6ed4cb6e1ca25133617"
+  },
+  "limitations": "Exploratory previously inspected same-source test, not independent or Instagram; thread labels weak for message-level inference; class prevalence source-specific; cross-author and near-duplicate leakage possible; same raw prefixes but tokenization and model heads differ; pretraining and source overlap unknown; no Android measurements."
+}

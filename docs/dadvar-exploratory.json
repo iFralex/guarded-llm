@@ -1,0 +1,15 @@
+{
+  "dataset": "Dadvar YouTube 2014, DOI 10.5281/zenodo.10143096",
+  "sample": "100 per class, random seed 42",
+  "unit": "author history, first 128 tokens only",
+  "threshold": 0.5,
+  "n": 200,
+  "truncated_histories": 130,
+  "precision": 0.6086956521739131,
+  "recall": 0.7,
+  "true_positives": 70,
+  "false_positives": 45,
+  "true_negatives": 55,
+  "false_negatives": 30,
+  "limitations": "Exploratory cross-task comparison: author-level bullying labels vs first-window toxicity; balanced sample, source and age differ from Instagram, pretraining overlap unknown. Not a validation of bullying or grooming detection."
+}

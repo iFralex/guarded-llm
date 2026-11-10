@@ -1,0 +1,83 @@
+{
+  "source_sha256": "f7164c7b3d46033bb3a73e3051db7d0693668935c07222f1de997a34df483519",
+  "seed": 67,
+  "objective": "CYBY23 thread labels: class 0 aggression without bullying vs classes 1 and 2 bullying; no normal safe class",
+  "split": "StratifiedGroupKFold, deterministic 5-fold; one fold development, one test, three train; union by normalized exact message and Excel tweet ID; no author fields, fuzzy similarity or reliable temporal split",
+  "partitions": {
+    "train": {
+      "n": 83,
+      "positives": 58,
+      "mobilebert_truncated": 53
+    },
+    "development": {
+      "n": 24,
+      "positives": 14,
+      "mobilebert_truncated": 11
+    },
+    "test": {
+      "n": 4,
+      "positives": 1,
+      "mobilebert_truncated": 2
+    }
+  },
+  "models": "MobileBERT last 2 layers and new head fine-tuned for 4 epochs on first 128 tokens of each thread; toxic-bert fixed existing 0.5 threshold applied to each message and aggregated with max. Both thresholds fixed at 0.5.",
+  "development": {
+    "mobilebert": {
+      "n": 24,
+      "positive": 14,
+      "tp": 14,
+      "fp": 10,
+      "tn": 0,
+      "fn": 0,
+      "precision": 0.5833333333333334,
+      "recall": 1.0,
+      "f1": 0.7368421052631579
+    },
+    "toxic_bert_any_message": {
+      "n": 24,
+      "positive": 14,
+      "tp": 13,
+      "fp": 9,
+      "tn": 1,
+      "fn": 1,
+      "precision": 0.5909090909090909,
+      "recall": 0.9285714285714286,
+      "f1": 0.7222222222222222
+    }
+  },
+  "selection_policy": "highest development F1; name breaks ties",
+  "selected_by_development": "mobilebert",
+  "test": {
+    "mobilebert": {
+      "n": 4,
+      "positive": 1,
+      "tp": 1,
+      "fp": 3,
+      "tn": 0,
+      "fn": 0,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    "toxic_bert_any_message": {
+      "n": 4,
+      "positive": 1,
+      "tp": 1,
+      "fp": 3,
+      "tn": 0,
+      "fn": 0,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    }
+  },
+  "loss_per_epoch": [
+    0.6969306355430966,
+    0.6947210828463236,
+    0.6836409341721308,
+    0.6843058665593466
+  ],
+  "mobilebert_artifact": "artifacts/cyby23-bullying-pilot/mobilebert-trainable.safetensors",
+  "artifact_sha256": "d0d83588512a384fff76218d8aa37e073f62181aebce4d47f52598188a1a8738",
+  "limitations": "Small single-source exploratory comparison; corpus already inspected and evaluated before split, so this is not a blinded or independent final test. Author overlap and approximate duplicates not ruled out; unknown pretraining overlap; message-level max vs truncated thread model uses different context. Public Twitter aggression-only sampling, not private chats; no independent expert annotation, real-world safety or Android measurement."
+}

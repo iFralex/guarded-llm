@@ -1,0 +1,30 @@
+{
+  "purpose": "60 additional CYBY24 threads, disjoint from earlier Gemma sample; exploratory, not independently sourced or representative",
+  "sampling": "seed 71; 30 positive, 30 negative; excludes earlier seed-43 sample",
+  "model_sha256": "181938105e0eefd105961417e8da75903eacda102c4fce9ce90f50b97139a63c",
+  "backend": "cpu",
+  "selected_on": "nine previously observed synthetic examples",
+  "label_limitations": "Original thread labels are bullying vs normal or aggression; prompts classify broader concern including threats and grooming, so labels and task do not exactly match. Previously inspected dataset, unknown pretraining overlap, incomplete author/near-duplicate audit; no source text, per-case labels or IDs saved.",
+  "results": {
+    "baseline": {
+      "counts": {
+        "tn": 30,
+        "fn": 29,
+        "tp": 1
+      },
+      "character_cap_truncated_threads": 0
+    },
+    "context_first": {
+      "counts": {
+        "abstain_negative": 16,
+        "uncertain": 33,
+        "abstain_positive": 18,
+        "tp": 5,
+        "fn": 7,
+        "tn": 14,
+        "format_errors": 1
+      },
+      "character_cap_truncated_threads": 0
+    }
+  }
+}

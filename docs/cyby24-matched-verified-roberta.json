@@ -1,0 +1,13 @@
+{
+  "model": "roberta",
+  "sample": "complete development split, batch size 4, original padding",
+  "result": "restored model and threshold reproduced development confusion counts",
+  "counts": {
+    "tp": 88,
+    "tn": 179,
+    "fp": 261,
+    "fn": 21
+  },
+  "truncated": 148,
+  "limitations": "Restore check only, not independent evaluation."
+}

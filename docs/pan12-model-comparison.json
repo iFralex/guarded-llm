@@ -1,0 +1,234 @@
+{
+  "archive_sha256": "1c0efbfc23e38ed52b38ae77600a758f9c1a0c53da825641ad82490b6541b81d",
+  "model": "google/mobilebert-uncased",
+  "revision": "1f90a6c24c7879273a291d34a849033eba2dbc0f",
+  "protocol": "pilot: first 5/10/20 messages; model fitted on 10; same author/text-disjoint sampled cohorts; TF-IDF sees MobileBERT-truncated decoded input",
+  "sampling": "train <=120 positive, <=240 negative; calibration/development each <=35 positive, <=175 negative; not natural prevalence",
+  "partitions": {
+    "train": {
+      "n": 360,
+      "positive": 120
+    },
+    "calibration": {
+      "n": 210,
+      "positive": 35
+    },
+    "development": {
+      "n": 209,
+      "positive": 35
+    }
+  },
+  "near_duplicate_filter": "3-word shingles Jaccard >=0.8 between selected 10-message windows; texts with <8 shingles not checked; near-duplicate audit incomplete",
+  "near_duplicates_dropped": {
+    "calibration": 0,
+    "development": 1
+  },
+  "threshold_policy": "highest calibration score at which sampled calibration recall >=0.9; no probability calibration",
+  "tfidf": {
+    "threshold": 0.582427205231458,
+    "development": {
+      "5": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.6739130434782609,
+        "recall": 0.8857142857142857,
+        "f1": 0.7654320987654321,
+        "average_precision": 0.8010544599721682,
+        "brier_uncalibrated": 0.1537622176616677,
+        "tp": 31,
+        "fp": 15,
+        "tn": 159,
+        "fn": 4,
+        "false_alerts_per_100_negative_windows": 8.620689655172415
+      },
+      "10": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.6666666666666666,
+        "recall": 0.9142857142857143,
+        "f1": 0.7710843373493976,
+        "average_precision": 0.8553877139190247,
+        "brier_uncalibrated": 0.15399591491654369,
+        "tp": 32,
+        "fp": 16,
+        "tn": 158,
+        "fn": 3,
+        "false_alerts_per_100_negative_windows": 9.195402298850574
+      },
+      "20": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.6666666666666666,
+        "recall": 0.9714285714285714,
+        "f1": 0.7906976744186046,
+        "average_precision": 0.8739032080102467,
+        "brier_uncalibrated": 0.1581227290855584,
+        "tp": 34,
+        "fp": 17,
+        "tn": 157,
+        "fn": 1,
+        "false_alerts_per_100_negative_windows": 9.770114942528735
+      }
+    }
+  },
+  "mobilebert_frozen_encoder_logistic_head": {
+    "threshold": 0.3779305699542964,
+    "development": {
+      "5": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.15204678362573099,
+        "recall": 0.7428571428571429,
+        "f1": 0.2524271844660194,
+        "average_precision": 0.15806109199163973,
+        "brier_uncalibrated": 0.25552120534762623,
+        "tp": 26,
+        "fp": 145,
+        "tn": 29,
+        "fn": 9,
+        "false_alerts_per_100_negative_windows": 83.33333333333333
+      },
+      "10": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.1724137931034483,
+        "recall": 0.8571428571428571,
+        "f1": 0.28708133971291866,
+        "average_precision": 0.19372345798876645,
+        "brier_uncalibrated": 0.251670601985477,
+        "tp": 30,
+        "fp": 144,
+        "tn": 30,
+        "fn": 5,
+        "false_alerts_per_100_negative_windows": 82.75862068965517
+      },
+      "20": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.17415730337078653,
+        "recall": 0.8857142857142857,
+        "f1": 0.29107981220657275,
+        "average_precision": 0.199907668476279,
+        "brier_uncalibrated": 0.2623034526791985,
+        "tp": 31,
+        "fp": 147,
+        "tn": 27,
+        "fn": 4,
+        "false_alerts_per_100_negative_windows": 84.48275862068965
+      }
+    },
+    "positive_first_alarm_prefix": {
+      "none": 4,
+      "5": 26,
+      "10": 4,
+      "20": 1
+    }
+  },
+  "mobilebert_finetuned": {
+    "threshold": 0.7209816575050354,
+    "epochs": 2,
+    "encoder_learning_rate": 2e-05,
+    "head_learning_rate": 0.001,
+    "development": {
+      "5": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.8285714285714286,
+        "recall": 0.8285714285714286,
+        "f1": 0.8285714285714286,
+        "average_precision": 0.8757575806573382,
+        "brier_uncalibrated": 0.13980287717872342,
+        "tp": 29,
+        "fp": 6,
+        "tn": 168,
+        "fn": 6,
+        "false_alerts_per_100_negative_windows": 3.4482758620689653
+      },
+      "10": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.8205128205128205,
+        "recall": 0.9142857142857143,
+        "f1": 0.8648648648648649,
+        "average_precision": 0.9305458093068122,
+        "brier_uncalibrated": 0.13704994978848922,
+        "tp": 32,
+        "fp": 7,
+        "tn": 167,
+        "fn": 3,
+        "false_alerts_per_100_negative_windows": 4.022988505747127
+      },
+      "20": {
+        "n": 209,
+        "positives": 35,
+        "precision": 0.7906976744186046,
+        "recall": 0.9714285714285714,
+        "f1": 0.8717948717948718,
+        "average_precision": 0.9171653930710931,
+        "brier_uncalibrated": 0.14231503884756672,
+        "tp": 34,
+        "fp": 9,
+        "tn": 165,
+        "fn": 1,
+        "false_alerts_per_100_negative_windows": 5.172413793103448
+      }
+    },
+    "positive_first_alarm_prefix": {
+      "5": 29,
+      "none": 1,
+      "10": 3,
+      "20": 2
+    }
+  },
+  "onnx": {
+    "bytes": 99015779,
+    "int8_bytes": 26531220,
+    "max_probability_error_float_vs_python": 1.6093254089355469e-06,
+    "max_probability_error_int8_vs_float": 0.2478742003440857,
+    "int8_development_10": {
+      "n": 209,
+      "positives": 35,
+      "precision": 0.7560975609756098,
+      "recall": 0.8857142857142857,
+      "f1": 0.8157894736842105,
+      "average_precision": 0.9248929677079941,
+      "brier_uncalibrated": 0.14415613618895934,
+      "tp": 31,
+      "fp": 10,
+      "tn": 164,
+      "fn": 4,
+      "false_alerts_per_100_negative_windows": 5.747126436781609
+    },
+    "uint8_bytes": 26531412,
+    "max_probability_error_uint8_vs_float": 0.14462268352508545,
+    "uint8_development_10": {
+      "n": 209,
+      "positives": 35,
+      "precision": 0.7804878048780488,
+      "recall": 0.9142857142857143,
+      "f1": 0.8421052631578947,
+      "average_precision": 0.8176030504975981,
+      "brier_uncalibrated": 0.13896481398661878,
+      "tp": 32,
+      "fp": 9,
+      "tn": 165,
+      "fn": 3,
+      "false_alerts_per_100_negative_windows": 5.172413793103448
+    },
+    "float_development_10": {
+      "n": 209,
+      "positives": 35,
+      "precision": 0.8205128205128205,
+      "recall": 0.9142857142857143,
+      "f1": 0.8648648648648649,
+      "average_precision": 0.9305458093068122,
+      "brier_uncalibrated": 0.1370499655298936,
+      "tp": 32,
+      "fp": 7,
+      "tn": 167,
+      "fn": 3,
+      "false_alerts_per_100_negative_windows": 4.022988505747127
+    }
+  },
+  "limitations": "Small sampled pilot with altered prevalence; author-derived labels, source/decoy cues, approximate deduplication, unknown model-pretraining overlap; no PAN12 official test, real-time or Android measurements; false alarms are per negative window, not per user or day."
+}

@@ -1,0 +1,22 @@
+{
+  "threshold": 0.5,
+  "warning": "Synthetic, small research set; not representative of Instagram or grooming.",
+  "calibration": {
+    "n": 10,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_positives": 5,
+    "true_negatives": 5
+  },
+  "test": {
+    "n": 10,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "false_positives": 1,
+    "false_negatives": 0,
+    "true_positives": 5,
+    "true_negatives": 4
+  }
+}

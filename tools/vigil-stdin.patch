@@ -1,0 +1,32 @@
+diff --git a/tools/laya/laya-cli.cpp b/tools/laya/laya-cli.cpp
+index adf63bd50..8d90caceb 100644
+--- a/tools/laya/laya-cli.cpp
++++ b/tools/laya/laya-cli.cpp
+@@ -420,19 +420,19 @@ int main(int argc, char ** argv) {
+     const laya_hparams & hp = laya_model_hparams(model);
+ 
+     // read input JSON
+-    FILE * fin = fopen(input_path.c_str(), "rb");
++    FILE * fin = input_path == "-" ? stdin : fopen(input_path.c_str(), "rb");
+     if (!fin) {
+         fprintf(stderr, "laya: failed to open input file '%s'\n", input_path.c_str());
+         laya_model_free(model);
+         return 1;
+     }
+-    fseek(fin, 0, SEEK_END);
+-    const long fsize = ftell(fin);
+-    fseek(fin, 0, SEEK_SET);
+-    std::string text((size_t) fsize, '\0');
+-    const size_t nread = fread(&text[0], 1, (size_t) fsize, fin);
+-    fclose(fin);
+-    text.resize(nread);
++    std::string text;
++    char buffer[8192];
++    size_t nread;
++    while ((nread = fread(buffer, 1, sizeof(buffer), fin)) > 0) {
++        text.append(buffer, nread);
++    }
++    if (fin != stdin) fclose(fin);
+ 
+     common_json input;
+     try {

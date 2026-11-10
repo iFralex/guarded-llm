@@ -1,0 +1,47 @@
+{
+  "model": "heman10x/rlcd-modernbert-151m",
+  "revision": "8af2496eb63c7fa66d7d234e1f62629380030eb4",
+  "mode": "zero-shot typed three-choice decision; no task fine-tuning",
+  "input": "128-token total budget includes label descriptions, proposition and chat; not the same usable text span as other models",
+  "threshold_policy": "highest score achieving >=0.9 recall on sampled calibration; no PAN-specific probability calibration",
+  "threshold": 0.08014354109764099,
+  "development": {
+    "5": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 172,
+      "tn": 2,
+      "fn": 1,
+      "precision": 0.1650485436893204,
+      "recall": 0.9714285714285714,
+      "f1": 0.2821576763485477,
+      "average_precision": 0.11949360799141281
+    },
+    "10": {
+      "n": 209,
+      "positives": 35,
+      "tp": 25,
+      "fp": 171,
+      "tn": 3,
+      "fn": 10,
+      "precision": 0.12755102040816327,
+      "recall": 0.7142857142857143,
+      "f1": 0.21645021645021645,
+      "average_precision": 0.10700665028158636
+    },
+    "20": {
+      "n": 209,
+      "positives": 35,
+      "tp": 25,
+      "fp": 168,
+      "tn": 6,
+      "fn": 10,
+      "precision": 0.12953367875647667,
+      "recall": 0.7142857142857143,
+      "f1": 0.21929824561403508,
+      "average_precision": 0.10904720675536297
+    }
+  },
+  "limitations": "Prompt-dependent zero-shot probe on same sampled groups; weak author labels, dataset source bias, unknown model pretraining overlap; no Android evaluation and no official PAN12 test. False and insufficient evidence choices are not the same as ground truth."
+}

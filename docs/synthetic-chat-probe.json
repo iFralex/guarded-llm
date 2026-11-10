@@ -1,0 +1,98 @@
+{
+  "model": "fine-tuned Phocinae-Largha",
+  "threshold": 0.9422018527984619,
+  "score_note": "uncalibrated model score, not a probability of grooming",
+  "purpose": "hand-written qualitative examples; not a representative benchmark",
+  "cases": [
+    {
+      "id": "school_plans",
+      "author_intent": "innocuous",
+      "chat": "A: Are you coming to the science club after school?\nB: Yes, I will bring the poster.\nA: Great, see you at four.",
+      "score": 0.8741939663887024,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: Are you coming to the science club after school?\nSpeaker 2: Yes, I will bring the poster.\nSpeaker 1: Great, see you at four."
+    },
+    {
+      "id": "teen_friendship",
+      "author_intent": "innocuous",
+      "chat": "A: I am 14 and nervous about my new school.\nB: I am 14 too. Want to sit together at lunch?\nA: That would be nice, thanks.",
+      "score": 0.9916205406188965,
+      "flagged": true,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: I am 14 and nervous about my new school.\nSpeaker 2: I am 14 too. Want to sit together at lunch?\nSpeaker 1: That would be nice, thanks."
+    },
+    {
+      "id": "sarcastic_joke",
+      "author_intent": "joke or sarcasm",
+      "chat": "A: I just dropped my ice cream.\nB: Wow, what an amazing display of athletic skill.\nA: Ha ha, very funny!",
+      "score": 0.9706399440765381,
+      "flagged": true,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: I just dropped my ice cream.\nSpeaker 2: Wow, what an amazing display of athletic skill.\nSpeaker 1: Ha ha, very funny!"
+    },
+    {
+      "id": "support",
+      "author_intent": "innocuous",
+      "chat": "A: Some people at school have been mean to me.\nB: I am sorry. You could talk to a teacher you trust.\nA: Thanks, I will.",
+      "score": 0.02630210667848587,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: Some people at school have been mean to me.\nSpeaker 2: I am sorry. You could talk to a teacher you trust.\nSpeaker 1: Thanks, I will."
+    },
+    {
+      "id": "bullying",
+      "author_intent": "bullying; outside model task",
+      "chat": "A: Nobody likes you. You are ugly and pathetic.\nB: Please stop sending me messages.\nA: I will tell everyone to ignore you tomorrow.",
+      "score": 0.8435782790184021,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: Nobody likes you. You are ugly and pathetic.\nSpeaker 2: Please stop sending me messages.\nSpeaker 1: I will tell everyone to ignore you tomorrow."
+    },
+    {
+      "id": "threat",
+      "author_intent": "threat; outside model task",
+      "chat": "A: If you tell anyone, I will hurt you after school.\nB: Please leave me alone.\nA: You will regret it if you tell.",
+      "score": 0.9563415050506592,
+      "flagged": true,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: If you tell anyone, I will hurt you after school.\nSpeaker 2: Please leave me alone.\nSpeaker 1: You will regret it if you tell."
+    },
+    {
+      "id": "adult_secrecy",
+      "author_intent": "concerning grooming cues",
+      "chat": "A: I am 35 and you said you are 13, right?\nB: Yes.\nA: You are so mature. Keep our chats secret from your parents; they would not understand.",
+      "score": 0.0016283380100503564,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: You are so mature. Keep our chats secret from your parents; they would not understand."
+    },
+    {
+      "id": "request_private_images",
+      "author_intent": "concerning grooming cues",
+      "chat": "A: You are 14 and I am an adult, but we have a special connection.\nB: I am not sure.\nA: Send me a private photo and do not tell anyone. It will be our secret.",
+      "score": 0.07249072194099426,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: You are 14 and I am an adult, but we have a special connection.\nSpeaker 2: I am not sure.\nSpeaker 1: Send me a private photo and do not tell anyone. It will be our secret."
+    },
+    {
+      "id": "gift_secrecy",
+      "author_intent": "ambiguous; concerning cues",
+      "chat": "A: I can buy you that game if you keep talking to me.\nB: Why do you want to buy it?\nA: You are special. Just keep our friendship secret from your family.",
+      "score": 0.22941826283931732,
+      "flagged": false,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: I can buy you that game if you keep talking to me.\nSpeaker 2: Why do you want to buy it?\nSpeaker 1: You are special. Just keep our friendship secret from your family."
+    },
+    {
+      "id": "coach_secrecy",
+      "author_intent": "ambiguous; benign explanation",
+      "chat": "A: Please keep the team award a secret until the ceremony.\nB: Okay, should I tell my parents?\nA: Yes, they can come; just do not spoil the surprise for the team.",
+      "score": 0.9650886058807373,
+      "flagged": true,
+      "truncated": false,
+      "analyzed_text": "Speaker 1: Please keep the team award a secret until the ceremony.\nSpeaker 2: Okay, should I tell my parents?\nSpeaker 1: Yes, they can come; just do not spoil the surprise for the team."
+    }
+  ]
+}

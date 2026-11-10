@@ -1,0 +1,19 @@
+{
+  "model": "modernbert",
+  "source": "ConvAbuse (Cercas Curry et al., EMNLP 2021, CC BY 4.0; github.com/amandacurry/convabuse), official test, 50 abusive and 50 non-abusive examples, 100 unique conversation IDs; random seed 97; only unanimous votes >=2, omit ambiguous/disagreement",
+  "excluded_counts": {
+    "ambiguous_disagreement_or_insufficient_votes": 188,
+    "empty_or_exact_overlap": 0
+  },
+  "input": "identical raw prefix <=256 tokens for four tokenizers (including Phocinae question); 223 Phocinae context tokens",
+  "truncated": 0,
+  "threshold": 0.01731204055249691,
+  "threshold_policy": "mobilebert, modernbert, phocinae and roberta: threshold selected on full development for >=0.8 recall and max precision; toxic: fixed .5; Vigil: publisher category threshold; Gemma: fixed three-way bullying prompt",
+  "counts": {
+    "fn": 34,
+    "tn": 48,
+    "tp": 16,
+    "fp": 2
+  },
+  "limitations": "External source, but abusive utterances directed at chatbots rather than peer bullying or grooming, and risk labels apply to target user utterance rather than full context. Sample balanced and consensus-only, class prevalence artificial. Pretraining overlap and paraphrases unknown; exact cross-source messages excluded. No source text or IDs stored; no Android timing."
+}

@@ -1,0 +1,15 @@
+{
+  "model": "toxic",
+  "sample": "same prior seed-43 balanced 60 CYBY24 threads, 30 positive and 30 negative",
+  "input": "identical raw prefix <=256 tokens for four tokenizers (including Phocinae question); 223 Phocinae context tokens",
+  "truncated": 16,
+  "threshold": 0.5,
+  "threshold_policy": "mobilebert, modernbert, phocinae and roberta: threshold selected on full development for >=0.8 recall and max precision; toxic: fixed .5; Vigil: publisher category threshold; Gemma: fixed three-way bullying prompt",
+  "counts": {
+    "fn": 20,
+    "fp": 6,
+    "tn": 24,
+    "tp": 10
+  },
+  "limitations": "Repeated previously explored, balanced single-source sample; not independent or representative of Instagram. Different model training, thresholds and task definitions; Vigil/Gemma token limits not independently audited. No source text or IDs stored; no Android timing."
+}

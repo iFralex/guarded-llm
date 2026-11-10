@@ -1,0 +1,47 @@
+{
+  "model": "answerdotai/ModernBERT-base",
+  "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "method": "frozen encoder, layer-normalized CLS features and balanced logistic head; no encoder fine-tuning",
+  "protocol": "identical sampled author/duplicate-disjoint partitions and 5/10/20 windows as MobileBERT pilot",
+  "threshold_policy": "highest calibration score with >=0.9 sampled calibration recall; no probability calibration",
+  "threshold": 0.43910078353410514,
+  "development": {
+    "5": {
+      "n": 209,
+      "positives": 35,
+      "tp": 25,
+      "fp": 11,
+      "tn": 163,
+      "fn": 10,
+      "precision": 0.6944444444444444,
+      "recall": 0.7142857142857143,
+      "f1": 0.704225352112676,
+      "average_precision": 0.7922171723347696
+    },
+    "10": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 19,
+      "tn": 155,
+      "fn": 1,
+      "precision": 0.6415094339622641,
+      "recall": 0.9714285714285714,
+      "f1": 0.7727272727272727,
+      "average_precision": 0.8823810148193483
+    },
+    "20": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 31,
+      "tn": 143,
+      "fn": 1,
+      "precision": 0.5230769230769231,
+      "recall": 0.9714285714285714,
+      "f1": 0.68,
+      "average_precision": 0.9077875894080613
+    }
+  },
+  "limitations": "Small sampled pilot, weak author labels, source bias, limited near-duplicate check, unknown pretraining overlap; no official test or Android test."
+}

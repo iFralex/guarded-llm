@@ -1,0 +1,29 @@
+{
+  "selected": "phocinae",
+  "selection_sha256_before_test": "3a9af9fc17248cf9a24a347de8b8ab54050e7151f203f9e746739f746e2c0eb8",
+  "threshold_frozen": 0.9422018527984619,
+  "corpus": "official PAN12 test, uniformly sampled after author and exact-duplicate exclusions",
+  "audit_counts": {
+    "segments": 155128,
+    "overlap_author": 48822,
+    "exact_overlap": 2870,
+    "empty": 36,
+    "positive_not_in_first_five": 13,
+    "eligible_before_sampling": 103387,
+    "sampled_before_near_duplicate_audit": 3000,
+    "near_duplicate_removed": 57,
+    "short_not_near_duplicate_audited": 174
+  },
+  "n": 2943,
+  "positive": 62,
+  "tp": 55,
+  "fp": 138,
+  "tn": 2743,
+  "fn": 7,
+  "precision": 0.2849740932642487,
+  "recall": 0.8870967741935484,
+  "f1": 0.43137254901960786,
+  "average_precision": 0.48519359350491803,
+  "matched_prefix_truncated": 184,
+  "limitations": "One uniform sample after exclusions, not full test; author-derived weak labels, filter on first five messages, incomplete near-duplicate audit (especially short inputs), source/decoy artifacts, no independent platform and unknown pretraining overlap; not validated for real-world grooming."
+}

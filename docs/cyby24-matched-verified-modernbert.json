@@ -1,0 +1,13 @@
+{
+  "model": "modernbert",
+  "sample": "complete development split, batch size 4, original padding",
+  "result": "restored model and threshold reproduced development confusion counts",
+  "counts": {
+    "tp": 95,
+    "tn": 191,
+    "fp": 249,
+    "fn": 14
+  },
+  "truncated": 148,
+  "limitations": "Restore check only, not independent evaluation."
+}

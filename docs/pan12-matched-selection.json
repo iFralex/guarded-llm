@@ -1,0 +1,87 @@
+{
+  "protocol": "same raw text prefix fitting both tokenizers, maximum 10 messages and 128 model tokens; exactly shared sampled groups; both partially fine-tuned for 2 epochs",
+  "seed": 42,
+  "context_budget_phocinae": 93,
+  "development_truncated": 58,
+  "partitions": {
+    "train": {
+      "n": 1200,
+      "positive": 400
+    },
+    "calibration": {
+      "n": 593,
+      "positive": 100
+    },
+    "development": {
+      "n": 563,
+      "positive": 70
+    }
+  },
+  "threshold_policy": "highest sampled calibration score with recall >=0.9; no probability calibration",
+  "selection_policy": "highest development F1 among models with recall >=0.85, else highest recall; tie by model name",
+  "models": {
+    "mobilebert": {
+      "threshold": 0.9729412794113159,
+      "development": {
+        "n": 563,
+        "positives": 70,
+        "tp": 60,
+        "fp": 37,
+        "tn": 456,
+        "fn": 10,
+        "precision": 0.6185567010309279,
+        "recall": 0.8571428571428571,
+        "f1": 0.718562874251497,
+        "average_precision": 0.4653259144572836
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "loss": 0.6454934478302796,
+          "seconds": 18.096471624999992
+        },
+        {
+          "epoch": 2,
+          "loss": 0.4808897051339348,
+          "seconds": 13.938978334000012
+        }
+      ],
+      "trainable_parameters": 1685506,
+      "artifact": "artifacts/pan12-matched/mobilebert.safetensors",
+      "sha256": "55ce7d89655e557fa80662e9275789d773146235d717017e3f1bfd309ac773bf"
+    },
+    "phocinae": {
+      "threshold": 0.9422018527984619,
+      "development": {
+        "n": 563,
+        "positives": 70,
+        "tp": 64,
+        "fp": 22,
+        "tn": 471,
+        "fn": 6,
+        "precision": 0.7441860465116279,
+        "recall": 0.9142857142857143,
+        "f1": 0.8205128205128205,
+        "average_precision": 0.9006788834240839
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "loss": 0.459778633848376,
+          "seconds": 35.91178941700002
+        },
+        {
+          "epoch": 2,
+          "loss": 0.34459444640444414,
+          "seconds": 35.04300175
+        }
+      ],
+      "trainable_parameters": 7534849,
+      "artifact": "artifacts/pan12-matched/phocinae.safetensors",
+      "sha256": "6a224569edd9c07cfb50ffa6624a105c6b060df09ae9a75c1dfb816dd2dd50e8"
+    }
+  },
+  "selected": "phocinae",
+  "selection_locked_before_test": true,
+  "limitations": "Sampled pilot; author-derived weak segment labels, source cues, incomplete approximate deduplication, prompt overhead, different model heads and tokenizers, pretraining overlap unknown; no official test read in this script."
+}

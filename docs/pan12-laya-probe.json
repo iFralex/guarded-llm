@@ -1,0 +1,74 @@
+{
+  "model": "convaiinnovations/laya",
+  "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "runtime_revision": "3c346a2f8b542838eed6a1d210aa378c79e71c4c",
+  "mode": "zero-shot typed binary decision; no fine-tuning",
+  "input": "128 tokens total including instruction and options; batch/single API parity checked",
+  "threshold_policy": "highest score achieving >=0.9 recall on sampled calibration; not PAN-specific probability calibration",
+  "threshold": 0.4981,
+  "development": {
+    "5": {
+      "n": 209,
+      "positives": 35,
+      "tp": 31,
+      "fp": 171,
+      "tn": 3,
+      "fn": 4,
+      "precision": 0.15346534653465346,
+      "recall": 0.8857142857142857,
+      "f1": 0.2616033755274262,
+      "average_precision": 0.2568905680219008
+    },
+    "10": {
+      "n": 209,
+      "positives": 35,
+      "tp": 31,
+      "fp": 171,
+      "tn": 3,
+      "fn": 4,
+      "precision": 0.15346534653465346,
+      "recall": 0.8857142857142857,
+      "f1": 0.2616033755274262,
+      "average_precision": 0.18251620310988761
+    },
+    "20": {
+      "n": 209,
+      "positives": 35,
+      "tp": 31,
+      "fp": 171,
+      "tn": 3,
+      "fn": 4,
+      "precision": 0.15346534653465346,
+      "recall": 0.8857142857142857,
+      "f1": 0.2616033755274262,
+      "average_precision": 0.18873778729831875
+    }
+  },
+  "host_batch_timings": [
+    {
+      "window": 10,
+      "samples": 210,
+      "seconds": 19.83691429099997,
+      "batch_size": 4
+    },
+    {
+      "window": 5,
+      "samples": 209,
+      "seconds": 17.344213874999923,
+      "batch_size": 4
+    },
+    {
+      "window": 10,
+      "samples": 209,
+      "seconds": 19.65854200000001,
+      "batch_size": 4
+    },
+    {
+      "window": 20,
+      "samples": 209,
+      "seconds": 20.66435637500001,
+      "batch_size": 4
+    }
+  ],
+  "limitations": "Prompt-dependent zero-shot probe; weak author labels, sampled data, source/decoy bias, partial near-deduplication, unknown pretraining overlap; no Android evaluation or official PAN12 test."
+}

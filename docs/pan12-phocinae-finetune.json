@@ -1,0 +1,101 @@
+{
+  "model": "Phocinae/Phocinae-Largha-150M-v1",
+  "revision": "a57030322df13c8c55ab7a99b8b7b176e2c5aa85",
+  "runtime_revision": "f751d7258e50b4cd19fe3967ae184ed895ce68b5",
+  "mode": "fine-tune final 2 encoder layers, final norm, typed-decision head, scorer and type embeddings; other encoder layers and action head frozen",
+  "input": "up to 5/10/20 messages, entire typed-decision sequence capped at 128 tokens including question; trained on first 10 messages",
+  "partitions": {
+    "train": {
+      "n": 360,
+      "positive": 120
+    },
+    "calibration": {
+      "n": 210,
+      "positive": 35
+    },
+    "development": {
+      "n": 209,
+      "positive": 35
+    }
+  },
+  "trainable_parameters": 7534849,
+  "total_parameters": 144292867,
+  "optimizer": "AdamW, encoder lr 2e-5, head lr 1e-4, weighted cross entropy, batch 4, seed 42",
+  "epochs": [
+    {
+      "epoch": 1,
+      "mean_batch_loss": 0.6144294833143552,
+      "seconds": 10.64011800000003
+    },
+    {
+      "epoch": 2,
+      "mean_batch_loss": 0.42218292893764253,
+      "seconds": 10.494140166999955
+    }
+  ],
+  "threshold_policy": "highest sampled calibration score with recall >=0.9; no probability calibration",
+  "threshold": 0.8267560001496694,
+  "development": {
+    "5": {
+      "n": 209,
+      "positives": 35,
+      "tp": 25,
+      "fp": 27,
+      "tn": 147,
+      "fn": 10,
+      "precision": 0.4807692307692308,
+      "recall": 0.7142857142857143,
+      "f1": 0.5747126436781609,
+      "average_precision": 0.6018475579296143,
+      "brier_uncalibrated": 0.1506401690938015
+    },
+    "10": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 40,
+      "tn": 134,
+      "fn": 1,
+      "precision": 0.4594594594594595,
+      "recall": 0.9714285714285714,
+      "f1": 0.6238532110091743,
+      "average_precision": 0.7837621722204907,
+      "brier_uncalibrated": 0.18970746801816632
+    },
+    "20": {
+      "n": 209,
+      "positives": 35,
+      "tp": 34,
+      "fp": 37,
+      "tn": 137,
+      "fn": 1,
+      "precision": 0.4788732394366197,
+      "recall": 0.9714285714285714,
+      "f1": 0.6415094339622641,
+      "average_precision": 0.7704367311086932,
+      "brier_uncalibrated": 0.1809778289375231
+    }
+  },
+  "artifact": {
+    "path": "artifacts/pan12-phocinae-finetune/trainable.safetensors",
+    "bytes": 30143868,
+    "sha256": "10a67f2ffec3697903053f63679fba9f78d183b29935ee2b00d524207f255d30",
+    "contains": "trainable weights only, base checkpoint required"
+  },
+  "limitations": "Small sampled cohort with altered prevalence, weak author-derived labels, prompt-dependent typed decision, incomplete near-duplicate audit, source/decoy artifacts; tokenizer and prompt budget differ from MobileBERT. No official PAN12 test or phone benchmark.",
+  "context_token_budget": 93,
+  "development_truncation": {
+    "5": {
+      "n": 209,
+      "truncated": 5
+    },
+    "10": {
+      "n": 209,
+      "truncated": 25
+    },
+    "20": {
+      "n": 209,
+      "truncated": 61
+    }
+  }
+}

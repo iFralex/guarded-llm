@@ -1,0 +1,13 @@
+{
+  "model": "mobilebert",
+  "sample": "complete development split, batch size 4, original padding",
+  "result": "restored model and threshold reproduced development confusion counts",
+  "counts": {
+    "tp": 98,
+    "tn": 74,
+    "fp": 366,
+    "fn": 11
+  },
+  "truncated": 148,
+  "limitations": "Restore check only, not independent evaluation."
+}

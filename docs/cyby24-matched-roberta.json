@@ -1,0 +1,54 @@
+{
+  "model": "roberta",
+  "seed": 79,
+  "data": "CYBY24: thread labels 3/4 positive, 1/2 negative; prior public source used for exploration",
+  "protocol": "same raw thread prefix fits all four tokenizers and Phocinae question, 256 total tokens per model; grouped by exact message and tweet ID; 2 epochs, final two layers and head for MobileBERT/ModernBERT/Phocinae; pre-fine-tuned RoBERTa not retrained",
+  "partitions": {
+    "train": {
+      "n": 1652,
+      "positive": 365,
+      "truncated": 484
+    },
+    "calibration": {
+      "n": 549,
+      "positive": 109,
+      "truncated": 148
+    },
+    "test": {
+      "n": 551,
+      "positive": 112,
+      "truncated": 174
+    }
+  },
+  "phocinae_context_tokens": 223,
+  "threshold_policy": "on calibration, maximum precision among score thresholds achieving recall >=0.8; score is not a calibrated probability",
+  "threshold": 0.6099131107330322,
+  "development": {
+    "n": 549,
+    "positive": 109,
+    "tp": 88,
+    "fp": 261,
+    "tn": 179,
+    "fn": 21,
+    "precision": 0.2521489971346705,
+    "recall": 0.8073394495412844,
+    "f1": 0.38427947598253276,
+    "average_precision": 0.3712528964648735
+  },
+  "test": {
+    "n": 551,
+    "positive": 112,
+    "tp": 75,
+    "fp": 255,
+    "tn": 184,
+    "fn": 37,
+    "precision": 0.22727272727272727,
+    "recall": 0.6696428571428571,
+    "f1": 0.3393665158371041,
+    "average_precision": 0.23114515706323435
+  },
+  "epochs": [],
+  "trainable_parameters": 0,
+  "artifact": null,
+  "limitations": "Exploratory previously inspected same-source test, not independent or Instagram; thread labels weak for message-level inference; class prevalence source-specific; cross-author and near-duplicate leakage possible; same raw prefixes but tokenization and model heads differ; pretraining and source overlap unknown; no Android measurements."
+}

@@ -1,0 +1,33 @@
+{
+  "model": "safecircleai/vigil f16 GGUF",
+  "revision": "b239313708157db33314ecc81269e9babc48452a",
+  "model_sha256": "6851d99ccc113738794ec1b4cc70baed1a15da80956bb77407c9e43f73b49068",
+  "sample": "identical seed-43 balanced 60-thread sample previously tested with Gemma, 30 positive and 30 negative",
+  "method": "publisher thresholds unchanged, compare any risk flag and bullying category flag separately to thread label",
+  "limitations": "Previously explored public Twitter dataset, balanced sample; weak mapping from thread bullying label to any risk; possible author/near-duplicate/pretraining overlap; no raw text or identifiers retained; not Android inference.",
+  "results": {
+    "any": {
+      "fn": 8,
+      "tp": 22,
+      "fp": 24,
+      "tn": 6
+    },
+    "bullying": {
+      "fn": 9,
+      "tp": 21,
+      "fp": 24,
+      "tn": 6
+    }
+  },
+  "flagged_category_counts": {
+    "bullying": 45,
+    "grooming": 29,
+    "sexual_content": 34,
+    "personal_info": 36,
+    "platform_migration": 35,
+    "threats": 35,
+    "isolation": 1
+  },
+  "truncated_by_character_cap": 0,
+  "errors": 0
+}

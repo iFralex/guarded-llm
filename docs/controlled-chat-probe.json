@@ -1,0 +1,391 @@
+{
+  "purpose": "exploratory synthetic paired perturbations, not a benchmark or verified ground truth",
+  "grooming_input": "same rendered conversation prefix for both models",
+  "toxicity_input": "last message only; ONNX host approximation, not Android execution",
+  "thresholds": {
+    "phocinae": 0.9422018527984619,
+    "mobilebert": 0.9729412794113159,
+    "toxic_bert": 0.5
+  },
+  "score_note": "uncalibrated model scores; not probabilities of grooming or safety",
+  "cases": [
+    {
+      "pair": "adult_age",
+      "changed_feature": "speaker age",
+      "variant": "a",
+      "chat": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "truncated": false,
+      "last_message": "Keep our chats secret from your parents.",
+      "phocinae": {
+        "score": 0.0026619783602654934,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9086878299713135,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.010171870717162208,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "adult_age",
+      "changed_feature": "speaker age",
+      "variant": "b",
+      "chat": "Speaker 1: I am 13 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "analyzed_text": "Speaker 1: I am 13 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "truncated": false,
+      "last_message": "Keep our chats secret from your parents.",
+      "phocinae": {
+        "score": 0.03419702872633934,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.5753920674324036,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.010171870717162208,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "recipient_age",
+      "changed_feature": "recipient age",
+      "variant": "a",
+      "chat": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "truncated": false,
+      "last_message": "Keep our chats secret from your parents.",
+      "phocinae": {
+        "score": 0.0026619783602654934,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9086878299713135,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.010171870717162208,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "recipient_age",
+      "changed_feature": "recipient age",
+      "variant": "b",
+      "chat": "Speaker 1: I am 35 and you said you are 35, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 35, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "truncated": false,
+      "last_message": "Keep our chats secret from your parents.",
+      "phocinae": {
+        "score": 0.0041605387814342976,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.4470755457878113,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.010171870717162208,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "secrecy",
+      "changed_feature": "secrecy request",
+      "variant": "a",
+      "chat": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: Keep our chats secret from your parents.",
+      "truncated": false,
+      "last_message": "Keep our chats secret from your parents.",
+      "phocinae": {
+        "score": 0.0026619783602654934,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9086878299713135,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.010171870717162208,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "secrecy",
+      "changed_feature": "secrecy request",
+      "variant": "b",
+      "chat": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: You can tell your parents about our chats.",
+      "analyzed_text": "Speaker 1: I am 35 and you said you are 13, right?\nSpeaker 2: Yes.\nSpeaker 1: You can tell your parents about our chats.",
+      "truncated": false,
+      "last_message": "You can tell your parents about our chats.",
+      "phocinae": {
+        "score": 0.00115223228931427,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9465603232383728,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0006166074082760727,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "photo",
+      "changed_feature": "photo subject and privacy",
+      "variant": "a",
+      "chat": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "analyzed_text": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "truncated": false,
+      "last_message": "Send me a private photo and keep it secret.",
+      "phocinae": {
+        "score": 0.0009560524486005306,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.09290338307619095,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0014847492401353528,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "photo",
+      "changed_feature": "photo subject and privacy",
+      "variant": "b",
+      "chat": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a photo of your pet and keep it secret.",
+      "analyzed_text": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a photo of your pet and keep it secret.",
+      "truncated": false,
+      "last_message": "Send me a photo of your pet and keep it secret.",
+      "phocinae": {
+        "score": 0.002085382817313075,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.08731589466333389,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.007939105740951302,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "age_context",
+      "changed_feature": "explicit adult and minor context",
+      "variant": "a",
+      "chat": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "analyzed_text": "Speaker 1: You are 14 and I am an adult.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "truncated": false,
+      "last_message": "Send me a private photo and keep it secret.",
+      "phocinae": {
+        "score": 0.0009560524486005306,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.09290338307619095,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0014847492401353528,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "age_context",
+      "changed_feature": "explicit adult and minor context",
+      "variant": "b",
+      "chat": "Speaker 1: We both enjoy playing games.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "analyzed_text": "Speaker 1: We both enjoy playing games.\nSpeaker 2: I am listening.\nSpeaker 1: Send me a private photo and keep it secret.",
+      "truncated": false,
+      "last_message": "Send me a private photo and keep it secret.",
+      "phocinae": {
+        "score": 0.9487484693527222,
+        "flagged": true
+      },
+      "mobilebert": {
+        "score": 0.03580661490559578,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0014847492401353528,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "gift",
+      "changed_feature": "conditional gift",
+      "variant": "a",
+      "chat": "Speaker 1: I can buy you that game if you keep talking to me.\nSpeaker 2: Why?\nSpeaker 1: Keep our friendship secret from your family.",
+      "analyzed_text": "Speaker 1: I can buy you that game if you keep talking to me.\nSpeaker 2: Why?\nSpeaker 1: Keep our friendship secret from your family.",
+      "truncated": false,
+      "last_message": "Keep our friendship secret from your family.",
+      "phocinae": {
+        "score": 0.08296649158000946,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.1011897623538971,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.00814454580387373,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "gift",
+      "changed_feature": "conditional gift",
+      "variant": "b",
+      "chat": "Speaker 1: I can tell you where that game is sold.\nSpeaker 2: Why?\nSpeaker 1: Keep our friendship secret from your family.",
+      "analyzed_text": "Speaker 1: I can tell you where that game is sold.\nSpeaker 2: Why?\nSpeaker 1: Keep our friendship secret from your family.",
+      "truncated": false,
+      "last_message": "Keep our friendship secret from your family.",
+      "phocinae": {
+        "score": 0.000558920088224113,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.034317366778850555,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.00814454580387373,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "humor",
+      "changed_feature": "sarcastic or literal remark",
+      "variant": "a",
+      "chat": "Speaker 1: I just dropped my ice cream.\nSpeaker 2: Oh no!\nSpeaker 1: What an amazing display of athletic skill.",
+      "analyzed_text": "Speaker 1: I just dropped my ice cream.\nSpeaker 2: Oh no!\nSpeaker 1: What an amazing display of athletic skill.",
+      "truncated": false,
+      "last_message": "What an amazing display of athletic skill.",
+      "phocinae": {
+        "score": 0.19052021205425262,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9518280625343323,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.000760457897395181,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "humor",
+      "changed_feature": "sarcastic or literal remark",
+      "variant": "b",
+      "chat": "Speaker 1: I just dropped my ice cream.\nSpeaker 2: Oh no!\nSpeaker 1: That was an unfortunate accident.",
+      "analyzed_text": "Speaker 1: I just dropped my ice cream.\nSpeaker 2: Oh no!\nSpeaker 1: That was an unfortunate accident.",
+      "truncated": false,
+      "last_message": "That was an unfortunate accident.",
+      "phocinae": {
+        "score": 0.9829277396202087,
+        "flagged": true
+      },
+      "mobilebert": {
+        "score": 0.9159733653068542,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.001805998264328084,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "insult",
+      "changed_feature": "insult or supportive wording",
+      "variant": "a",
+      "chat": "Speaker 1: I am nervous about school tomorrow.\nSpeaker 2: Why?\nSpeaker 1: Nobody likes you. You are ugly and pathetic.",
+      "analyzed_text": "Speaker 1: I am nervous about school tomorrow.\nSpeaker 2: Why?\nSpeaker 1: Nobody likes you. You are ugly and pathetic.",
+      "truncated": false,
+      "last_message": "Nobody likes you. You are ugly and pathetic.",
+      "phocinae": {
+        "score": 0.9860373139381409,
+        "flagged": true
+      },
+      "mobilebert": {
+        "score": 0.9681141972541809,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.9855981366871774,
+        "flagged": true
+      }
+    },
+    {
+      "pair": "insult",
+      "changed_feature": "insult or supportive wording",
+      "variant": "b",
+      "chat": "Speaker 1: I am nervous about school tomorrow.\nSpeaker 2: Why?\nSpeaker 1: You are a good friend and I am here to help.",
+      "analyzed_text": "Speaker 1: I am nervous about school tomorrow.\nSpeaker 2: Why?\nSpeaker 1: You are a good friend and I am here to help.",
+      "truncated": false,
+      "last_message": "You are a good friend and I am here to help.",
+      "phocinae": {
+        "score": 0.9991621971130371,
+        "flagged": true
+      },
+      "mobilebert": {
+        "score": 0.8831982612609863,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0006040193238994638,
+        "flagged": false
+      }
+    },
+    {
+      "pair": "threat",
+      "changed_feature": "threat or support",
+      "variant": "a",
+      "chat": "Speaker 1: I want to talk to someone about this.\nSpeaker 2: Okay.\nSpeaker 1: If you tell anyone, I will hurt you.",
+      "analyzed_text": "Speaker 1: I want to talk to someone about this.\nSpeaker 2: Okay.\nSpeaker 1: If you tell anyone, I will hurt you.",
+      "truncated": false,
+      "last_message": "If you tell anyone, I will hurt you.",
+      "phocinae": {
+        "score": 0.02236306667327881,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.9212265610694885,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.7398823374230156,
+        "flagged": true
+      }
+    },
+    {
+      "pair": "threat",
+      "changed_feature": "threat or support",
+      "variant": "b",
+      "chat": "Speaker 1: I want to talk to someone about this.\nSpeaker 2: Okay.\nSpeaker 1: If you tell someone, I will support you.",
+      "analyzed_text": "Speaker 1: I want to talk to someone about this.\nSpeaker 2: Okay.\nSpeaker 1: If you tell someone, I will support you.",
+      "truncated": false,
+      "last_message": "If you tell someone, I will support you.",
+      "phocinae": {
+        "score": 0.025851599872112274,
+        "flagged": false
+      },
+      "mobilebert": {
+        "score": 0.8984386920928955,
+        "flagged": false
+      },
+      "toxic_bert_last_turn": {
+        "score": 0.0006252343579407168,
+        "flagged": false
+      }
+    }
+  ]
+}

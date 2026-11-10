@@ -1,0 +1,113 @@
+{
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "provider": "CPUExecutionProvider",
+  "threads": 4,
+  "scope": "Host-only, synthetic inputs; not Android latency, battery, or real workloads",
+  "models": {
+    "model.onnx": {
+      "bytes": 99015779,
+      "session_load_ms": 357.3849999993399,
+      "lengths": {
+        "16": {
+          "actual_tokens": 16,
+          "p50_ms": 3.891895999913686,
+          "p95_ms": 4.928771500544827,
+          "runs": 20
+        },
+        "64": {
+          "actual_tokens": 64,
+          "p50_ms": 10.616229500101326,
+          "p95_ms": 11.370150350012409,
+          "runs": 20
+        },
+        "128": {
+          "actual_tokens": 128,
+          "p50_ms": 20.01664549970883,
+          "p95_ms": 24.937224650057033,
+          "runs": 20
+        }
+      },
+      "process_peak_rss_raw": 514654208,
+      "rss_note": "Cumulative process peak; not per-model memory"
+    },
+    "model-int8.onnx": {
+      "bytes": 26531220,
+      "session_load_ms": 293.59104200011643,
+      "lengths": {
+        "16": {
+          "actual_tokens": 16,
+          "p50_ms": 3.7043540000922803,
+          "p95_ms": 4.298033650411526,
+          "runs": 20
+        },
+        "64": {
+          "actual_tokens": 64,
+          "p50_ms": 10.038562499630643,
+          "p95_ms": 10.672956249663912,
+          "runs": 20
+        },
+        "128": {
+          "actual_tokens": 128,
+          "p50_ms": 17.88091649996204,
+          "p95_ms": 18.273829149347876,
+          "runs": 20
+        }
+      },
+      "process_peak_rss_raw": 556810240,
+      "rss_note": "Cumulative process peak; not per-model memory"
+    },
+    "model-uint8.onnx": {
+      "bytes": 26531412,
+      "session_load_ms": 291.7828339996049,
+      "lengths": {
+        "16": {
+          "actual_tokens": 16,
+          "p50_ms": 4.407791499943414,
+          "p95_ms": 4.619619350387438,
+          "runs": 20
+        },
+        "64": {
+          "actual_tokens": 64,
+          "p50_ms": 13.418187499610212,
+          "p95_ms": 14.44325414981904,
+          "runs": 20
+        },
+        "128": {
+          "actual_tokens": 128,
+          "p50_ms": 27.10597899977074,
+          "p95_ms": 32.08244645011292,
+          "runs": 20
+        }
+      },
+      "process_peak_rss_raw": 560693248,
+      "rss_note": "Cumulative process peak; not per-model memory"
+    },
+    "model-int8-per-channel.onnx": {
+      "bytes": 26996389,
+      "session_load_ms": 281.0932500005947,
+      "lengths": {
+        "16": {
+          "actual_tokens": 16,
+          "p50_ms": 3.2807289999254863,
+          "p95_ms": 3.74899200028267,
+          "runs": 20
+        },
+        "64": {
+          "actual_tokens": 64,
+          "p50_ms": 10.189624999838998,
+          "p95_ms": 12.605364250157441,
+          "runs": 20
+        },
+        "128": {
+          "actual_tokens": 128,
+          "p50_ms": 18.353541999658773,
+          "p95_ms": 19.593704799763145,
+          "runs": 20
+        }
+      },
+      "process_peak_rss_raw": 572424192,
+      "rss_note": "Cumulative process peak; not per-model memory"
+    }
+  }
+}
