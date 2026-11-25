@@ -1,0 +1,716 @@
+{
+  "objective": "Add an independently trained irony score to bullying embeddings and compare against a same-architecture ablation.",
+  "dataset": "CYBY24 grouped split already explored; labels 3/4 positive, 1/2 negative.",
+  "partitions": {
+    "train": {
+      "n": 1652,
+      "positive": 365
+    },
+    "calibration": {
+      "n": 549,
+      "positive": 109
+    },
+    "evaluation": {
+      "n": 551,
+      "positive": 112
+    }
+  },
+  "truncated": {
+    "train": 484,
+    "calibration": 148,
+    "evaluation": 174
+  },
+  "input": "same raw thread prefix <=256 tokens for all tokenizers; irony uses publisher username/URL preprocessing",
+  "irony_model": "cardiffnlp/twitter-roberta-base-irony",
+  "irony_revision": "3bf8f118bdf6b00c99658151ef10c9a0b9afd6bf",
+  "irony_sha256": "9c82ae7d8e6639f22c7a91d1fab78b880a9862d71d2c9f1fa68d79da1d644bad",
+  "irony_license": "Model card does not state a license; further rights review is needed before redistribution.",
+  "bullying_model": "nayan90k/roberta-finetuned-cyberbullying-detection",
+  "bullying_revision": "a5c86fdb6aa46b7d41261907e6c6ecbb2cf66907",
+  "bullying_sha256": "9cf3d24e3d64cbad3778219fb24a3e0390a523b50b878f41a99ca0b3656e57df",
+  "threshold_policy": "Maximize calibration precision with recall >=0.8, separately per model; thresholds are uncalibrated.",
+  "heads": "Same fixed architecture 32/16 ReLU, StandardScaler fit only on train, Adam, seed 42, max 100 iterations; no tuning on evaluation.",
+  "results": {
+    "classifier": {
+      "threshold": 0.6099131107330322,
+      "train": {
+        "counts": {
+          "tp": 268,
+          "fp": 761,
+          "tn": 526,
+          "fn": 97,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.26044703595724006,
+        "recall": 0.7342465753424657,
+        "false_alarm_rate": 0.5912975912975913,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7342465753424657,
+            "false_alerts_per_1000": 590.7062937062936
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.342465753424658,
+            "false_alerts_per_1000": 585.3846153846154
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 36.71232876712329,
+            "false_alerts_per_1000": 561.7327117327118
+          }
+        ]
+      },
+      "calibration": {
+        "counts": {
+          "tp": 88,
+          "fp": 261,
+          "tn": 179,
+          "fn": 21,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2521489971346705,
+        "recall": 0.8073394495412844,
+        "false_alarm_rate": 0.5931818181818181,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8073394495412844,
+            "false_alerts_per_1000": 592.5886363636363
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.073394495412845,
+            "false_alerts_per_1000": 587.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.36697247706422,
+            "false_alerts_per_1000": 563.5227272727273
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 75,
+          "fp": 255,
+          "tn": 184,
+          "fn": 37,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.22727272727272727,
+        "recall": 0.6696428571428571,
+        "false_alarm_rate": 0.5808656036446469,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.6696428571428571,
+            "false_alerts_per_1000": 580.2847380410022
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 6.696428571428571,
+            "false_alerts_per_1000": 575.0569476082004
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 33.482142857142854,
+            "false_alerts_per_1000": 551.8223234624146
+          }
+        ]
+      }
+    },
+    "mlp_without_irony": {
+      "threshold": 0.17631090052253184,
+      "train": {
+        "counts": {
+          "tp": 286,
+          "fp": 826,
+          "tn": 461,
+          "fn": 79,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.25719424460431656,
+        "recall": 0.7835616438356164,
+        "false_alarm_rate": 0.6418026418026418,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7835616438356164,
+            "false_alerts_per_1000": 641.1608391608391
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.835616438356165,
+            "false_alerts_per_1000": 635.3846153846154
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 39.178082191780824,
+            "false_alerts_per_1000": 609.7125097125097
+          }
+        ]
+      },
+      "calibration": {
+        "counts": {
+          "tp": 88,
+          "fp": 295,
+          "tn": 145,
+          "fn": 21,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2297650130548303,
+        "recall": 0.8073394495412844,
+        "false_alarm_rate": 0.6704545454545454,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8073394495412844,
+            "false_alerts_per_1000": 669.7840909090909
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.073394495412845,
+            "false_alerts_per_1000": 663.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.36697247706422,
+            "false_alerts_per_1000": 636.9318181818181
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 84,
+          "fp": 307,
+          "tn": 132,
+          "fn": 28,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.21483375959079284,
+        "recall": 0.75,
+        "false_alarm_rate": 0.6993166287015945,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.75,
+            "false_alerts_per_1000": 698.6173120728929
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.5,
+            "false_alerts_per_1000": 692.3234624145786
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 37.5,
+            "false_alerts_per_1000": 664.3507972665147
+          }
+        ]
+      },
+      "iterations": 62,
+      "final_loss": 0.520437175357972,
+      "loss_curve_last_ten": [
+        0.5217423040186895,
+        0.5225965046809116,
+        0.5211682687403117,
+        0.5213242756037131,
+        0.5234782778781707,
+        0.5248424030355677,
+        0.5203705269896575,
+        0.5200847909709373,
+        0.5221152146478014,
+        0.520437175357972
+      ]
+    },
+    "mlp_with_irony": {
+      "threshold": 0.18670941734712476,
+      "train": {
+        "counts": {
+          "tp": 285,
+          "fp": 848,
+          "tn": 439,
+          "fn": 80,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.25154457193292146,
+        "recall": 0.7808219178082192,
+        "false_alarm_rate": 0.6588966588966589,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7808219178082192,
+            "false_alerts_per_1000": 658.2377622377622
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.808219178082192,
+            "false_alerts_per_1000": 652.3076923076924
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 39.04109589041096,
+            "false_alerts_per_1000": 625.951825951826
+          }
+        ]
+      },
+      "calibration": {
+        "counts": {
+          "tp": 89,
+          "fp": 308,
+          "tn": 132,
+          "fn": 20,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.22418136020151133,
+        "recall": 0.8165137614678899,
+        "false_alarm_rate": 0.7,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8165137614678899,
+            "false_alerts_per_1000": 699.3
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.1651376146789,
+            "false_alerts_per_1000": 693.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.825688073394495,
+            "false_alerts_per_1000": 665.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 87,
+          "fp": 312,
+          "tn": 127,
+          "fn": 25,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.21804511278195488,
+        "recall": 0.7767857142857143,
+        "false_alarm_rate": 0.7107061503416856,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7767857142857143,
+            "false_alerts_per_1000": 709.995444191344
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.767857142857143,
+            "false_alerts_per_1000": 703.5990888382687
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 38.839285714285715,
+            "false_alerts_per_1000": 675.1708428246013
+          }
+        ]
+      },
+      "iterations": 36,
+      "final_loss": 0.5210898160283388,
+      "loss_curve_last_ten": [
+        0.5210591215951001,
+        0.5228849586152782,
+        0.5255103041980493,
+        0.5252983461482956,
+        0.522165450787976,
+        0.523216965956018,
+        0.5212734924777835,
+        0.5222879374405466,
+        0.5216185432463887,
+        0.5210898160283388
+      ]
+    }
+  },
+  "synthetic_sarcasm_cases": [
+    {
+      "id": "friendly01",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.902630090713501,
+      "decisions": {
+        "classifier": {
+          "score": 0.4629465341567993,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.1900886616087939,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.19124154055163267,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "friendly02",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.6085169911384583,
+      "decisions": {
+        "classifier": {
+          "score": 0.637351930141449,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.20069249705244546,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.14349414430890398,
+          "flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly03",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.825035035610199,
+      "decisions": {
+        "classifier": {
+          "score": 0.3870698809623718,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.17528603869403003,
+          "flagged": false
+        },
+        "mlp_with_irony": {
+          "score": 0.19961598612336612,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "friendly04",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.7401086688041687,
+      "decisions": {
+        "classifier": {
+          "score": 0.2148664891719818,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.19240179899730764,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.21176161673212276,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "friendly05",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.20706208050251007,
+      "decisions": {
+        "classifier": {
+          "score": 0.1848488301038742,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.1774540186891334,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.189864417200537,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "friendly06",
+      "category": "friendly_teasing",
+      "label": 0,
+      "irony_score": 0.6723693609237671,
+      "decisions": {
+        "classifier": {
+          "score": 0.4736458659172058,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.17900723743905148,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.17549887642240172,
+          "flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile01",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.9253032803535461,
+      "decisions": {
+        "classifier": {
+          "score": 0.4367266893386841,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.20589791836410257,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.22328725911808106,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "hostile02",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.6503255367279053,
+      "decisions": {
+        "classifier": {
+          "score": 0.023997614160180092,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.15686867578465366,
+          "flagged": false
+        },
+        "mlp_with_irony": {
+          "score": 0.21417509064089638,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "hostile03",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.4640795588493347,
+      "decisions": {
+        "classifier": {
+          "score": 0.1340501606464386,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.1629478674564784,
+          "flagged": false
+        },
+        "mlp_with_irony": {
+          "score": 0.18144268471538924,
+          "flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile04",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.8393716216087341,
+      "decisions": {
+        "classifier": {
+          "score": 0.3964361846446991,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.18035045996259794,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.2000226699241187,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "hostile05",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.7323095798492432,
+      "decisions": {
+        "classifier": {
+          "score": 0.24833782017230988,
+          "flagged": false
+        },
+        "mlp_without_irony": {
+          "score": 0.21845292109401684,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.238207500928968,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "hostile06",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "irony_score": 0.8606728315353394,
+      "decisions": {
+        "classifier": {
+          "score": 0.7196381688117981,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.2213639158504714,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.2085780800760063,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult01",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.47046568989753723,
+      "decisions": {
+        "classifier": {
+          "score": 0.9782439470291138,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.36446514901577526,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.3539967068954733,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult02",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.2337748408317566,
+      "decisions": {
+        "classifier": {
+          "score": 0.9211927652359009,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.30926981312766993,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.3873396980206969,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult03",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.5508697032928467,
+      "decisions": {
+        "classifier": {
+          "score": 0.9805887341499329,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.3693308866181507,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.3716271395733984,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult04",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.4221557378768921,
+      "decisions": {
+        "classifier": {
+          "score": 0.9589744806289673,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.36373261741057705,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.35261712852445193,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult05",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.34237638115882874,
+      "decisions": {
+        "classifier": {
+          "score": 0.981894314289093,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.3730797988235356,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.3821832591696488,
+          "flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult06",
+      "category": "direct_insult",
+      "label": 1,
+      "irony_score": 0.2997353672981262,
+      "decisions": {
+        "classifier": {
+          "score": 0.9703028798103333,
+          "flagged": true
+        },
+        "mlp_without_irony": {
+          "score": 0.3576823011758467,
+          "flagged": true
+        },
+        "mlp_with_irony": {
+          "score": 0.3394210151742895,
+          "flagged": true
+        }
+      }
+    }
+  ],
+  "synthetic_limitations": "18 previously explored invented cases and author-intended categories; contexts contain explicit harmful conduct; no independent sarcasm labels.",
+  "host_elapsed_seconds": 283.54,
+  "limitations": "Previously explored CYBY24, Twitter threads not Instagram; exact duplicate and tweet ID grouping only; author, near-duplicate and pretrained model overlap unknown. No sarcasm labels in CYBY24; irony may measure other cues. Single seed and no Android inference or battery measurements. Not the paper\u2019s original CNN-LSTM method."
+}
