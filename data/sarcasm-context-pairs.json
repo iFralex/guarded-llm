@@ -1,0 +1,23 @@
+{
+  "description": "Researcher-authored English cases; category and intent reflect author judgment. The same target message is scored alone and after its preceding conversation.",
+  "cases": [
+    {"id":"friendly01","category":"friendly_teasing","label":0,"context":"A: I dropped my sandwich on the floor again.\nB: Oh no, that was my last napkin.\nA: At least I can laugh at myself.","target":"What an amazing display of athletic skill."},
+    {"id":"friendly02","category":"friendly_teasing","label":0,"context":"B: I finally beat your puzzle time!\nA: You did, fair and square. This friendly contest is fun.\nB: You can tease me back when I lose.","target":"Clearly you are an unstoppable genius."},
+    {"id":"friendly03","category":"friendly_teasing","label":0,"context":"B: I wore two different socks by accident.\nA: I did that yesterday too.\nB: Haha, you can laugh. It is funny.","target":"Wow, a true fashion icon."},
+    {"id":"friendly04","category":"friendly_teasing","label":0,"context":"B: My cardboard rocket fell over immediately.\nA: Mine did the same.\nB: Let's joke about our engineering skills.","target":"NASA will definitely call you tomorrow."},
+    {"id":"friendly05","category":"friendly_teasing","label":0,"context":"B: I lost our board game in two moves.\nA: You promised to tease me if that happened.\nB: Haha, go on.","target":"A master strategist strikes again."},
+    {"id":"friendly06","category":"friendly_teasing","label":0,"context":"B: I put salt in my coffee instead of sugar.\nA: I did that last week.\nB: Please make a joke; we are both laughing.","target":"Your cooking skills are legendary."},
+    {"id":"hostile01","category":"hostile_sarcasm","label":1,"context":"A: Our group has mocked your reading every day.\nB: Please stop posting my mistakes.\nA: Everyone will keep laughing at you tomorrow.","target":"What an amazing display of intelligence."},
+    {"id":"hostile02","category":"hostile_sarcasm","label":1,"context":"A: We edited your picture and posted it every morning.\nB: I asked you to take it down.\nA: We will repost it until you leave the group.","target":"Wow, a true fashion icon."},
+    {"id":"hostile03","category":"hostile_sarcasm","label":1,"context":"A: The group has laughed at your presentations all week.\nB: The comments hurt; please stop.\nA: We will share your recording again tomorrow.","target":"What a brilliant performance, as always."},
+    {"id":"hostile04","category":"hostile_sarcasm","label":1,"context":"A: We keep making new accounts to mock your artwork.\nB: Leave me alone.\nA: Everyone will post the same joke again tomorrow.","target":"Your art skills are truly legendary."},
+    {"id":"hostile05","category":"hostile_sarcasm","label":1,"context":"A: Our group tells everyone to ignore you every day.\nB: Please stop excluding me.\nA: We will keep it up until you quit.","target":"You are obviously the most popular person here."},
+    {"id":"hostile06","category":"hostile_sarcasm","label":1,"context":"A: We keep sharing that clip to humiliate you.\nB: I asked you to delete it yesterday.\nA: We will send it to the class again.","target":"An outstanding achievement, everyone is so impressed."},
+    {"id":"insult01","category":"direct_insult","label":1,"context":"A: The group has insulted you in this chat every day.\nB: Please stop messaging me.\nA: We will keep sending these messages tomorrow.","target":"Nobody likes you, you pathetic loser."},
+    {"id":"insult02","category":"direct_insult","label":1,"context":"A: I have posted insults about you all week.\nB: Leave me alone.\nA: I will post the same thing in every group.","target":"You are worthless and nobody wants you here."},
+    {"id":"insult03","category":"direct_insult","label":1,"context":"A: We keep making accounts to harass you.\nB: I have asked you all to stop.\nA: We will write again tomorrow.","target":"You are an idiot and everyone hates you."},
+    {"id":"insult04","category":"direct_insult","label":1,"context":"A: We have mocked your voice every day this week.\nB: Please delete those comments.\nA: We will keep posting.","target":"Your voice is disgusting and you are pathetic."},
+    {"id":"insult05","category":"direct_insult","label":1,"context":"A: We have told classmates to avoid you all month.\nB: Please stop targeting me.\nA: We will keep it going.","target":"You are a stupid loser who deserves no friends."},
+    {"id":"insult06","category":"direct_insult","label":1,"context":"A: I have sent you insults from three accounts.\nB: Stop harassing me.\nA: I'll message you again tomorrow.","target":"You are ugly and everybody thinks you are a joke."}
+  ]
+}

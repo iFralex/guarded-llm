@@ -1,0 +1,824 @@
+{
+  "dataset_sha256": "ae6091341af59d49e7df8b2ce53b0147093dde6c5aa8a9f9f05782487b9c1127",
+  "protocol": "Each target unchanged; compare target alone with three preceding turns plus target. Frozen CYBY24 256-token thresholds; no threshold fitting on these cases.",
+  "thresholds": {
+    "toxic": 0.05783601641375838,
+    "roberta": 0.6099131107330322,
+    "phocinae": 0.025190923362970352
+  },
+  "limitations": "Author-intended labels, small artificial sample, context can contain independently harmful messages; hostile target alone is ambiguous. Prior CYBY24 thresholds are uncalibrated and task/model definitions differ. Host CPU only.",
+  "summary": {
+    "toxic": {
+      "alone": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      },
+      "with_context": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      }
+    },
+    "roberta": {
+      "alone": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 0,
+          "not_flagged": 6
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      },
+      "with_context": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 1,
+          "not_flagged": 5
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 1,
+          "not_flagged": 5
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      }
+    },
+    "phocinae": {
+      "alone": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 5,
+          "not_flagged": 1
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 2,
+          "not_flagged": 4
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      },
+      "with_context": {
+        "friendly_teasing": {
+          "n": 6,
+          "flags": 4,
+          "not_flagged": 2
+        },
+        "hostile_sarcasm": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        },
+        "direct_insult": {
+          "n": 6,
+          "flags": 6,
+          "not_flagged": 0
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "friendly01",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "A: I dropped my sandwich on the floor again.\nB: Oh no, that was my last napkin.\nA: At least I can laugh at myself.",
+      "target": "What an amazing display of athletic skill.",
+      "phocinae": {
+        "alone": {
+          "score": 0.024519216269254684,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.01651553064584732,
+          "flagged": false
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.21799057722091675,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.4629465341567993,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.000760457897395181,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0023188871832512488,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly02",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "B: I finally beat your puzzle time!\nA: You did, fair and square. This friendly contest is fun.\nB: You can tease me back when I lose.",
+      "target": "Clearly you are an unstoppable genius.",
+      "phocinae": {
+        "alone": {
+          "score": 0.026805395260453224,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.021807316690683365,
+          "flagged": false
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.24840664863586426,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.637351930141449,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0028592178144068526,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.002223990935716631,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly03",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "B: I wore two different socks by accident.\nA: I did that yesterday too.\nB: Haha, you can laugh. It is funny.",
+      "target": "Wow, a true fashion icon.",
+      "phocinae": {
+        "alone": {
+          "score": 0.04912908375263214,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.029467321932315826,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.23313875496387482,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.3870699107646942,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0006062654933692672,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0010689746357973272,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly04",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "B: My cardboard rocket fell over immediately.\nA: Mine did the same.\nB: Let's joke about our engineering skills.",
+      "target": "NASA will definitely call you tomorrow.",
+      "phocinae": {
+        "alone": {
+          "score": 0.02619939297437668,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.08891598880290985,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.04528046026825905,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.21486663818359375,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0007988163632149355,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0009989357042447938,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly05",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "B: I lost our board game in two moves.\nA: You promised to tease me if that happened.\nB: Haha, go on.",
+      "target": "A master strategist strikes again.",
+      "phocinae": {
+        "alone": {
+          "score": 0.06104998290538788,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.12330769747495651,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.11929899454116821,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.1848488450050354,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.024073966763298406,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.021223160466876497,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "friendly06",
+      "category": "friendly_teasing",
+      "label": 0,
+      "context": "B: I put salt in my coffee instead of sugar.\nA: I did that last week.\nB: Please make a joke; we are both laughing.",
+      "target": "Your cooking skills are legendary.",
+      "phocinae": {
+        "alone": {
+          "score": 0.03095519170165062,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.04378025233745575,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.4042997658252716,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.4736459255218506,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0017863604878517348,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.005306934272109621,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile01",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: Our group has mocked your reading every day.\nB: Please stop posting my mistakes.\nA: Everyone will keep laughing at you tomorrow.",
+      "target": "What an amazing display of intelligence.",
+      "phocinae": {
+        "alone": {
+          "score": 0.024670371785759926,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.04353288561105728,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.25472894310951233,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.43672698736190796,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.001026391492176772,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.00144641463703812,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile02",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: We edited your picture and posted it every morning.\nB: I asked you to take it down.\nA: We will repost it until you leave the group.",
+      "target": "Wow, a true fashion icon.",
+      "phocinae": {
+        "alone": {
+          "score": 0.04912908375263214,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.07040385901927948,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.23313875496387482,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.023997630923986435,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0006062654933692672,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0007923685008759386,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile03",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: The group has laughed at your presentations all week.\nB: The comments hurt; please stop.\nA: We will share your recording again tomorrow.",
+      "target": "What a brilliant performance, as always.",
+      "phocinae": {
+        "alone": {
+          "score": 0.024435384199023247,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.028920669108629227,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.15327295660972595,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.13405023515224457,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0009848028167380174,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0009188898034414846,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile04",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: We keep making new accounts to mock your artwork.\nB: Leave me alone.\nA: Everyone will post the same joke again tomorrow.",
+      "target": "Your art skills are truly legendary.",
+      "phocinae": {
+        "alone": {
+          "score": 0.017152607440948486,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.05295298248529434,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.25094157457351685,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.3964361846446991,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0017118516155651864,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.03333888252222972,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile05",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: Our group tells everyone to ignore you every day.\nB: Please stop excluding me.\nA: We will keep it up until you quit.",
+      "target": "You are obviously the most popular person here.",
+      "phocinae": {
+        "alone": {
+          "score": 0.05672568082809448,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.06702377647161484,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.14807486534118652,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.24833790957927704,
+          "flagged": false
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0007631457965264384,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.002197125498993163,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "hostile06",
+      "category": "hostile_sarcasm",
+      "label": 1,
+      "context": "A: We keep sharing that clip to humiliate you.\nB: I asked you to delete it yesterday.\nA: We will send it to the class again.",
+      "target": "An outstanding achievement, everyone is so impressed.",
+      "phocinae": {
+        "alone": {
+          "score": 0.01897794008255005,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.06967635452747345,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.0654832273721695,
+          "flagged": false
+        },
+        "with_context": {
+          "score": 0.7196381688117981,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.0005213621323965787,
+          "flagged": false,
+          "app_threshold_flagged": false
+        },
+        "with_context": {
+          "score": 0.0019110342633140208,
+          "flagged": false,
+          "app_threshold_flagged": false
+        }
+      }
+    },
+    {
+      "id": "insult01",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: The group has insulted you in this chat every day.\nB: Please stop messaging me.\nA: We will keep sending these messages tomorrow.",
+      "target": "Nobody likes you, you pathetic loser.",
+      "phocinae": {
+        "alone": {
+          "score": 0.10567864030599594,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.19599749147891998,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9806775450706482,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.9782439470291138,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.9855381268132399,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.9537038676270446,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult02",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: I have posted insults about you all week.\nB: Leave me alone.\nA: I will post the same thing in every group.",
+      "target": "You are worthless and nobody wants you here.",
+      "phocinae": {
+        "alone": {
+          "score": 0.11175049841403961,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.2095419466495514,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9727338552474976,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.9211927652359009,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.9593082662788353,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.7268432916015762,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult03",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: We keep making accounts to harass you.\nB: I have asked you all to stop.\nA: We will write again tomorrow.",
+      "target": "You are an idiot and everyone hates you.",
+      "phocinae": {
+        "alone": {
+          "score": 0.22531548142433167,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.18675822019577026,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9834686517715454,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.9805887341499329,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.9908549569268633,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.970403067608666,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult04",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: We have mocked your voice every day this week.\nB: Please delete those comments.\nA: We will keep posting.",
+      "target": "Your voice is disgusting and you are pathetic.",
+      "phocinae": {
+        "alone": {
+          "score": 0.20568837225437164,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.22347179055213928,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9755862951278687,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.9589744806289673,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.9856571395894507,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.9460050579282315,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult05",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: We have told classmates to avoid you all month.\nB: Please stop targeting me.\nA: We will keep it going.",
+      "target": "You are a stupid loser who deserves no friends.",
+      "phocinae": {
+        "alone": {
+          "score": 0.08960548788309097,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.08140204846858978,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9830563068389893,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.981894314289093,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.986077381344683,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.9321387994418517,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    },
+    {
+      "id": "insult06",
+      "category": "direct_insult",
+      "label": 1,
+      "context": "A: I have sent you insults from three accounts.\nB: Stop harassing me.\nA: I'll message you again tomorrow.",
+      "target": "You are ugly and everybody thinks you are a joke.",
+      "phocinae": {
+        "alone": {
+          "score": 0.08196508139371872,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.21780294179916382,
+          "flagged": true
+        }
+      },
+      "roberta": {
+        "alone": {
+          "score": 0.9821550846099854,
+          "flagged": true
+        },
+        "with_context": {
+          "score": 0.9703028798103333,
+          "flagged": true
+        }
+      },
+      "toxic": {
+        "alone": {
+          "score": 0.9573019382529155,
+          "flagged": true,
+          "app_threshold_flagged": true
+        },
+        "with_context": {
+          "score": 0.9067338034854486,
+          "flagged": true,
+          "app_threshold_flagged": true
+        }
+      }
+    }
+  ]
+}
