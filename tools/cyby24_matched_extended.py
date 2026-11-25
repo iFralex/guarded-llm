@@ -10,17 +10,31 @@ from transformers import AutoModel,AutoModelForSequenceClassification,AutoTokeni
 from safetensors.torch import load_file
 from cyby24_split import ROOT,load
 from cyby24_common_input import build
+from benchmark_metrics import calibration_threshold, summarize
 
-p=argparse.ArgumentParser();p.add_argument('--model',choices=['mobilebert','modernbert','phocinae','roberta','toxic','vigil','gemma'],required=True);p.add_argument('--verify-development',action='store_true');args=p.parse_args()
+p=argparse.ArgumentParser()
+p.add_argument('--model',choices=['mobilebert','modernbert','phocinae','roberta','toxic','vigil','gemma'],required=True)
+mode=p.add_mutually_exclusive_group()
+mode.add_argument('--verify-development',action='store_true')
+mode.add_argument('--standardized',action='store_true',help='Calibrate and evaluate on the full exploratory CYBY24 partitions')
+args=p.parse_args()
 name=args.model
 if args.verify_development and name not in ('mobilebert','modernbert','phocinae','roberta'):p.error('development verification is for the matched models')
 dest=ROOT/(f'docs/cyby24-matched-verified-{name}.json' if args.verify_development else f'docs/cyby24-matched60-{name}.json')
+if args.standardized:
+    dest=ROOT/f'reports/cyby24-standardized-{name}.json'
+    dest.parent.mkdir(exist_ok=True)
 if dest.exists():raise SystemExit('Existing report; refusing to overwrite')
 torch.set_num_threads(4)
 c,y,tr,dev,test,components=load();rng=random.Random(43)
 sample=rng.sample([int(i) for i in test if y[i]==1],30)+rng.sample([int(i) for i in test if y[i]==0],30);rng.shuffle(sample)
 if args.verify_development:sample=[int(i) for i in dev]
-texts,cut,room=build(c,sample)
+if args.standardized:
+    sample=[int(i) for i in (*dev,*test)]
+    toxic_tok=BertTokenizerFast(vocab_file=str(ROOT/'app/src/main/assets/model/vocab.txt'),do_lower_case=True)
+    texts,cut,room=build(c,sample,extra_tokenizers=(toxic_tok,))
+else:
+    texts,cut,room=build(c,sample)
 print('prepared',len(sample),'prefixes, truncated',sum(cut.values()),flush=True)
 rev='1f90a6c24c7879273a291d34a849033eba2dbc0f'; mid='google/mobilebert-uncased'; pathmodern=ROOT/'.cache/modernbert-base'; pathroberta=ROOT/'.cache/roberta-cyberbullying'
 threshold=None;model=None;engine=None;tok=None
@@ -34,7 +48,7 @@ class EncoderClassifier(nn.Module):
         h=self.encoder(**b);z=h.pooler_output if self.kind=='mobilebert' else h.last_hidden_state[:,0,:]
         return self.head(F.layer_norm(z,(self.encoder.config.hidden_size,)))
 if name in ('mobilebert','modernbert','phocinae','roberta'):
-    previous=json.loads((ROOT/f'reports/cyby24-matched-{name}.json').read_text());threshold=previous['threshold']
+    previous=json.loads((ROOT/f'docs/cyby24-matched-{name}.json').read_text());threshold=previous['threshold']
     if name=='roberta':
         model=AutoModelForSequenceClassification.from_pretrained(pathroberta,local_files_only=True);tok=AutoTokenizer.from_pretrained(pathroberta,local_files_only=True)
     elif name in ('mobilebert','modernbert'):
@@ -93,9 +107,11 @@ if args.verify_development:
     out={'model':name,'sample':'complete development split, batch size 4, original padding','result':'restored model and threshold reproduced development confusion counts','counts':actual,'truncated':int(sum(cut.values())),'limitations':'Restore check only, not independent evaluation.'}
     dest.write_text(json.dumps(out,indent=2)+'\n');sys.exit(0)
 counts=Counter()
+observations=[]
+scored_models={'mobilebert','modernbert','phocinae','roberta','toxic','vigil'}
 try:
     for j,i in enumerate(sample):
-        text=texts[i];label=int(y[i]);pred=None;kind='invalid'
+        text=texts[i];label=int(y[i]);pred=None;kind='invalid';score=None
         try:
             if name in ('mobilebert','modernbert','roberta'):
                 b=tok(text,truncation=True,max_length=256,return_tensors='pt')
@@ -108,20 +124,48 @@ try:
                 score=torch.softmax(logits.float(),dim=1)[0,1].item();pred=bool(score>=threshold)
             elif name=='toxic':
                 b=tok(text,truncation=True,max_length=256,return_tensors='np');logit=model.run(None,{k:v.astype(np.int64) for k,v in b.items() if k in inputs})[0][0][0]
-                pred=bool(float(1/(1+np.exp(-logit)))>=threshold)
-            elif name=='vigil':pred='bullying' in vigilant(cli,artifact,text)['flagged']
+                score=float(1/(1+np.exp(-logit)));pred=bool(score>=threshold)
+            elif name=='vigil':
+                result=vigilant(cli,artifact,text)
+                score=float(result['scores']['bullying'])
+                pred='bullying' in result['flagged']
             else:
                 with engine.create_conversation(system_message=system,sampler_config=lm.SamplerConfig(top_k=1,temperature=0.0,seed=42),thinking_config=lm.ThinkingConfig(enable_thinking=False,thinking_token_budget=0),max_output_tokens=16) as conv:
                     response=str(conv.send_message('THREAD START\n'+text+'\nTHREAD END',max_output_tokens=16)).strip()
                 match=re.fullmatch(r'\s*(BULLYING|NOT_BULLYING|UNCERTAIN)[.!\s]*',response,re.I)
                 if match:
                     ans=match.group(1).upper();pred={'BULLYING':True,'NOT_BULLYING':False}.get(ans);kind='uncertain'
-        except Exception:pred=None;kind='error'
+        except Exception:pred=None;score=None;kind='error'
+        if args.standardized:
+            if kind=='error':
+                raise RuntimeError(f'Inference failed for {name} at example {j + 1}') from None
+            if name in scored_models and (score is None or not np.isfinite(score)):
+                raise RuntimeError(f'Invalid score for {name} at example {j + 1}')
+            observations.append((label,score if name in scored_models else pred))
         if pred is None:
             counts['abstain_positive' if label else 'abstain_negative']+=1;counts[kind]+=1
         else:counts[{(1,True):'tp',(1,False):'fn',(0,True):'fp',(0,False):'tn'}[(label,pred)]]+=1
         if (j+1)%20==0:print('evaluated',j+1,'/',len(sample),flush=True)
 finally:
     if name=='gemma' and engine:engine.close()
+if args.standardized:
+    calibration, evaluation=observations[:len(dev)],observations[len(dev):]
+    if name in scored_models:
+        threshold=calibration_threshold(calibration)
+        def decisions(rows):
+            return [(label, None if score is None else score >= threshold) for label,score in rows]
+        calibration,evaluation=decisions(calibration),decisions(evaluation)
+    out={
+        'protocol':'CYBY24 exploratory v1','model':name,'threshold':threshold,
+        'decision_policy':'calibrated at recall >= 0.8' if name in scored_models else 'fixed bullying prompt; uncertain and invalid responses abstain',
+        'common_token_budget':256,
+        'truncated':{'calibration':sum(cut[int(i)] for i in dev),'evaluation':sum(cut[int(i)] for i in test)},
+        'calibration':summarize(calibration),'evaluation':summarize(evaluation),
+        'output_failures':{key:counts[key] for key in ('invalid','uncertain')},
+        'limitations':'Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited.',
+    }
+    dest.write_text(json.dumps(out,indent=2)+'\n')
+    print(json.dumps(out,indent=2),flush=True)
+    sys.exit(0)
 out={'model':name,'sample':'full development split for independent reload validation' if args.verify_development else 'same prior seed-43 balanced 60 CYBY24 threads, 30 positive and 30 negative','input':'identical raw prefix <=256 tokens for four tokenizers (including Phocinae question); 223 Phocinae context tokens','truncated':int(sum(cut.values())),'threshold':threshold,'threshold_policy':'mobilebert, modernbert, phocinae and roberta: threshold selected on full development for >=0.8 recall and max precision; toxic: fixed .5; Vigil: publisher category threshold; Gemma: fixed three-way bullying prompt', 'counts':dict(counts),'limitations':'Repeated previously explored, single-source sample; not independent or representative of Instagram. Different model training, thresholds and task definitions; Vigil/Gemma token limits not independently audited. No source text or IDs stored; no Android timing.'}
 dest.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2),flush=True)

@@ -11,3 +11,24 @@ Status: **not run**. Record Android version, phone model, Instagram version, APK
 - Record warm and cold inference latency, peak memory and APK/model size; state device and methodology. Do not infer battery usage or real-world accuracy from a short run.
 
 None of these observations, accuracy metrics or latency results have been measured in this workspace.
+
+## Paired acquisition comparison
+
+Use two test accounts on one physical Android phone, with the same Instagram version and settings for both passes. Run the prototype and the AWARE-Light screen-text sensor in separate passes. Record the exact framework version, configuration and whether the sensor is available and exposes a usable capture record. Keep capture files local and use invented text for this exercise.
+
+Send the following messages in order. Preserve capitalization, punctuation and the identical repeated text.
+
+| Turn | Sender | Text |
+| --- | --- | --- |
+| 1 | A | Are we still meeting after class? |
+| 2 | B | Yes, meet me by the library. |
+| 3 | A | I'll be there in five. |
+| 4 | B | OK, I’ll wait. |
+| 5 | B | OK, I’ll wait. |
+| 6 | A | Nobody wants you in our group. |
+| 7 | B | Please stop sending me that. |
+| 8 | A | That's enough for today's test. |
+
+For each pass, open the chat, receive the first four turns, briefly leave the chat, return for the remaining turns, scroll up and down, then switch to a non-chat screen and stop capture. Record which turns were visible and when. Keep an ordered record of what each pipeline actually receives. If the prototype only exposes accepted events, use a local debug inspection of those events and record that measurement point. Compare sensor output and classifier input separately when possible.
+
+Match captures to reference turns in order, preserving the two intentional repetitions. Count missed visible turns, unintended duplicates, out-of-order turns, extra interface text and failures to distinguish sender direction. Record one comparison per run and include Android and Instagram versions. Feed the clean reference and each captured transcript to the same classifier with the same context and threshold, then record changes in score or decision. Treat this as a functional check on invented chat text.

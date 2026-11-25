@@ -1,0 +1,140 @@
+{
+  "model": "chatcompanion/compAnIonv1",
+  "revision": "b2f8a04ae9c895acd0f008e67af27ebc2c81641b",
+  "sha256": "bf5108e35161775328143f246a825ed1e4ff75f190a4b13427b9d2374ae2e0dd",
+  "cases": [
+    {
+      "id": "g01",
+      "researcher_label": "CONCERN",
+      "score": 0.13716843724250793,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "g02",
+      "researcher_label": "CONCERN",
+      "score": 0.5766367316246033,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "g03",
+      "researcher_label": "CONCERN",
+      "score": 0.7472466826438904,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "g04",
+      "researcher_label": "CONCERN",
+      "score": 0.6508685350418091,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "b01",
+      "researcher_label": "CONCERN",
+      "score": 0.5574910640716553,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "b02",
+      "researcher_label": "CONCERN",
+      "score": 0.05758637934923172,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "b03",
+      "researcher_label": "CONCERN",
+      "score": 0.08126674592494965,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "b04",
+      "researcher_label": "CONCERN",
+      "score": 0.0412827730178833,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "t01",
+      "researcher_label": "CONCERN",
+      "score": 0.08698038756847382,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "t02",
+      "researcher_label": "CONCERN",
+      "score": 0.1615353375673294,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "t03",
+      "researcher_label": "CONCERN",
+      "score": 0.3476889431476593,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n01",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.7260388731956482,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "n02",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.1635419875383377,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n03",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.4646713435649872,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n04",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.089728444814682,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n05",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.9020994305610657,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "n06",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.1303691267967224,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n07",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.37864911556243896,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n08",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.019597934558987617,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n09",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.00021485310571733862,
+      "flagged_at_0_5": false
+    },
+    {
+      "id": "n10",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.6359078884124756,
+      "flagged_at_0_5": true
+    },
+    {
+      "id": "n11",
+      "researcher_label": "NO_CONCERN",
+      "score": 0.5009245276451111,
+      "flagged_at_0_5": true
+    }
+  ],
+  "limitations": "Previously examined synthetic examples with author-intended labels. CompAnIon targets grooming rather than all concern categories. No independent framework parity or phone test."
+}

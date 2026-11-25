@@ -4,7 +4,7 @@ from pathlib import Path
 from huggingface_hub import snapshot_download
 from transformers import AutoTokenizer
 ROOT=Path(__file__).resolve().parents[1]
-def build(conversations,indices):
+def build(conversations,indices,extra_tokenizers=()):
     runtime=os.environ.get('PHOC_RUNTIME')
     if not runtime:raise RuntimeError('Set PHOC_RUNTIME')
     sys.path.insert(0,runtime)
@@ -20,7 +20,7 @@ def build(conversations,indices):
     room=budget-len(e._build_sequence(spec,[],[0,1],64,budget)[0])
     def prefix(text):
         text=text.replace(e.tok.mask_token,' ')
-        def fits(s):return len(e.tok.encode(s))<=room and all(len(t(s,add_special_tokens=True)['input_ids'])<=budget for t in (mt,nt,rt))
+        def fits(s):return len(e.tok.encode(s))<=room and all(len(t(s,add_special_tokens=True)['input_ids'])<=budget for t in (mt,nt,rt,*extra_tokenizers))
         if fits(text):return text,False
         lo,hi=0,len(text)
         while lo<hi:

@@ -1,0 +1,550 @@
+{
+  "results": [
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "toxic",
+      "threshold": 0.05783601641375838,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 91,
+          "fp": 217,
+          "tn": 223,
+          "fn": 18,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.29545454545454547,
+        "recall": 0.8348623853211009,
+        "false_alarm_rate": 0.49318181818181817,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8348623853211009,
+            "false_alerts_per_1000": 492.68863636363636
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.34862385321101,
+            "false_alerts_per_1000": 488.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 41.74311926605505,
+            "false_alerts_per_1000": 468.52272727272725
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 82,
+          "fp": 223,
+          "tn": 216,
+          "fn": 30,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.26885245901639343,
+        "recall": 0.7321428571428571,
+        "false_alarm_rate": 0.5079726651480638,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7321428571428571,
+            "false_alerts_per_1000": 507.4646924829158
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.321428571428571,
+            "false_alerts_per_1000": 502.8929384965832
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 36.607142857142854,
+            "false_alerts_per_1000": 482.57403189066065
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "roberta",
+      "threshold": 0.6099131107330322,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 88,
+          "fp": 261,
+          "tn": 179,
+          "fn": 21,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2521489971346705,
+        "recall": 0.8073394495412844,
+        "false_alarm_rate": 0.5931818181818181,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8073394495412844,
+            "false_alerts_per_1000": 592.5886363636363
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.073394495412845,
+            "false_alerts_per_1000": 587.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.36697247706422,
+            "false_alerts_per_1000": 563.5227272727273
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 75,
+          "fp": 255,
+          "tn": 184,
+          "fn": 37,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.22727272727272727,
+        "recall": 0.6696428571428571,
+        "false_alarm_rate": 0.5808656036446469,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.6696428571428571,
+            "false_alerts_per_1000": 580.2847380410022
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 6.696428571428571,
+            "false_alerts_per_1000": 575.0569476082004
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 33.482142857142854,
+            "false_alerts_per_1000": 551.8223234624146
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "modernbert",
+      "threshold": 0.01731208711862564,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 95,
+          "fp": 249,
+          "tn": 191,
+          "fn": 14,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2761627906976744,
+        "recall": 0.8715596330275229,
+        "false_alarm_rate": 0.5659090909090909,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8715596330275229,
+            "false_alerts_per_1000": 565.3431818181818
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.715596330275229,
+            "false_alerts_per_1000": 560.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 43.57798165137615,
+            "false_alerts_per_1000": 537.6136363636364
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 88,
+          "fp": 236,
+          "tn": 203,
+          "fn": 24,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2716049382716049,
+        "recall": 0.7857142857142857,
+        "false_alarm_rate": 0.5375854214123007,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7857142857142857,
+            "false_alerts_per_1000": 537.0478359908884
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.857142857142857,
+            "false_alerts_per_1000": 532.2095671981776
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 39.285714285714285,
+            "false_alerts_per_1000": 510.70615034168566
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "phocinae",
+      "threshold": 0.025190923362970352,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 89,
+          "fp": 260,
+          "tn": 180,
+          "fn": 20,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.25501432664756446,
+        "recall": 0.8165137614678899,
+        "false_alarm_rate": 0.5909090909090909,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8165137614678899,
+            "false_alerts_per_1000": 590.3181818181819
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.1651376146789,
+            "false_alerts_per_1000": 585.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.825688073394495,
+            "false_alerts_per_1000": 561.3636363636364
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 96,
+          "fp": 260,
+          "tn": 179,
+          "fn": 16,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2696629213483146,
+        "recall": 0.8571428571428571,
+        "false_alarm_rate": 0.592255125284738,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8571428571428571,
+            "false_alerts_per_1000": 591.6628701594533
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.571428571428571,
+            "false_alerts_per_1000": 586.3325740318907
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.857142857142854,
+            "false_alerts_per_1000": 562.6423690205011
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "mobilebert",
+      "threshold": 0.021523943170905113,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 93,
+          "fp": 347,
+          "tn": 93,
+          "fn": 16,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.21136363636363636,
+        "recall": 0.8532110091743119,
+        "false_alarm_rate": 0.7886363636363637,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8532110091743119,
+            "false_alerts_per_1000": 787.8477272727273
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.53211009174312,
+            "false_alerts_per_1000": 780.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.6605504587156,
+            "false_alerts_per_1000": 749.2045454545455
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 97,
+          "fp": 349,
+          "tn": 90,
+          "fn": 15,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.21748878923766815,
+        "recall": 0.8660714285714286,
+        "false_alarm_rate": 0.7949886104783599,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8660714285714286,
+            "false_alerts_per_1000": 794.1936218678816
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.660714285714286,
+            "false_alerts_per_1000": 787.0387243735763
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 43.30357142857143,
+            "false_alerts_per_1000": 755.2391799544419
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "gemma",
+      "threshold": null,
+      "decision_policy": "fixed bullying prompt; uncertain and invalid responses abstain",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 98,
+          "fp": 289,
+          "tn": 111,
+          "fn": 7,
+          "abstain_positive": 4,
+          "abstain_negative": 40
+        },
+        "precision": 0.2532299741602067,
+        "recall": 0.8990825688073395,
+        "false_alarm_rate": 0.6568181818181819,
+        "coverage": 0.9198542805100182,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8990825688073395,
+            "false_alerts_per_1000": 656.1613636363637
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.990825688073395,
+            "false_alerts_per_1000": 650.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 44.95412844036697,
+            "false_alerts_per_1000": 623.9772727272727
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 91,
+          "fp": 305,
+          "tn": 97,
+          "fn": 11,
+          "abstain_positive": 10,
+          "abstain_negative": 37
+        },
+        "precision": 0.2297979797979798,
+        "recall": 0.8125,
+        "false_alarm_rate": 0.6947608200455581,
+        "coverage": 0.9147005444646098,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8125,
+            "false_alerts_per_1000": 694.0660592255125
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.125,
+            "false_alerts_per_1000": 687.8132118451025
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.625,
+            "false_alerts_per_1000": 660.0227790432801
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 91
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    },
+    {
+      "protocol": "CYBY24 exploratory v1",
+      "model": "vigil",
+      "threshold": 0.0124,
+      "decision_policy": "calibrated at recall >= 0.8",
+      "common_token_budget": 256,
+      "truncated": {
+        "calibration": 148,
+        "evaluation": 174
+      },
+      "calibration": {
+        "counts": {
+          "tp": 88,
+          "fp": 283,
+          "tn": 157,
+          "fn": 21,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2371967654986523,
+        "recall": 0.8073394495412844,
+        "false_alarm_rate": 0.6431818181818182,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8073394495412844,
+            "false_alerts_per_1000": 642.5386363636363
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.073394495412845,
+            "false_alerts_per_1000": 636.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.36697247706422,
+            "false_alerts_per_1000": 611.0227272727273
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 80,
+          "fp": 278,
+          "tn": 161,
+          "fn": 32,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.22346368715083798,
+        "recall": 0.7142857142857143,
+        "false_alarm_rate": 0.6332574031890661,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7142857142857143,
+            "false_alerts_per_1000": 632.624145785877
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.142857142857143,
+            "false_alerts_per_1000": 626.9248291571754
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 35.714285714285715,
+            "false_alerts_per_1000": 601.5945330296128
+          }
+        ]
+      },
+      "output_failures": {
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "limitations": "Previously explored CYBY24 split. Prevalence values are hypothetical. Gemma/Vigil token limits not independently audited."
+    }
+  ]
+}

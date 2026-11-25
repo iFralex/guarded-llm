@@ -1,0 +1,999 @@
+{
+  "dataset_sha256": "92cb94a5fab4512b0a125300c0bfafc20193ccbaadede8ce277f52c71f009fb9",
+  "results": [
+    {
+      "dataset": "synthetic_grooming",
+      "model": "companion",
+      "threshold": 0.2021578550338745,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 4,
+          "tn": 0,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "false_alarm_rate": 1.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 999.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 990.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 950.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 8,
+          "fp": 8,
+          "tn": 0,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "false_alarm_rate": 1.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 999.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 990.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 950.0
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "espd_bert",
+      "threshold": 0.00017973985814023763,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 3,
+          "tn": 1,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "false_alarm_rate": 0.75,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 749.25
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 742.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 712.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 6,
+          "fp": 7,
+          "tn": 1,
+          "fn": 2,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.46153846153846156,
+        "recall": 0.75,
+        "false_alarm_rate": 0.875,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.75,
+            "false_alerts_per_1000": 874.125
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.5,
+            "false_alerts_per_1000": 866.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 37.5,
+            "false_alerts_per_1000": 831.25
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "espd_mobile",
+      "threshold": 9.702571696834639e-05,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 4,
+          "tn": 0,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "false_alarm_rate": 1.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 999.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 990.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 950.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 5,
+          "fp": 7,
+          "tn": 1,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.4166666666666667,
+        "recall": 0.625,
+        "false_alarm_rate": 0.875,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.625,
+            "false_alerts_per_1000": 874.125
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 6.25,
+            "false_alerts_per_1000": 866.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 31.25,
+            "false_alerts_per_1000": 831.25
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "phocinae",
+      "threshold": 0.018833357840776443,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 7,
+          "fp": 5,
+          "tn": 3,
+          "fn": 1,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5833333333333334,
+        "recall": 0.875,
+        "false_alarm_rate": 0.625,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.875,
+            "false_alerts_per_1000": 624.375
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.75,
+            "false_alerts_per_1000": 618.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 43.75,
+            "false_alerts_per_1000": 593.75
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "toxic",
+      "threshold": 0.0016575884091835497,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 6,
+          "fn": 4,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "false_alarm_rate": 0.25,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.5,
+            "false_alerts_per_1000": 249.75
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 5.0,
+            "false_alerts_per_1000": 247.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 25.0,
+            "false_alerts_per_1000": 237.5
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "roberta",
+      "threshold": 0.2458803802728653,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 3,
+          "fp": 3,
+          "tn": 5,
+          "fn": 5,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 0.375,
+        "false_alarm_rate": 0.375,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.375,
+            "false_alerts_per_1000": 374.625
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 3.75,
+            "false_alerts_per_1000": 371.25
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 18.75,
+            "false_alerts_per_1000": 356.25
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_grooming",
+      "model": "llamaguard",
+      "threshold": null,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 4,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 4,
+          "fp": 1,
+          "tn": 7,
+          "fn": 4,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.8,
+        "recall": 0.5,
+        "false_alarm_rate": 0.125,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.5,
+            "false_alerts_per_1000": 124.875
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 5.0,
+            "false_alerts_per_1000": 123.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 25.0,
+            "false_alerts_per_1000": 118.75
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 349,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "companion",
+      "threshold": 0.17716121673583984,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 3,
+          "tn": 1,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "false_alarm_rate": 0.75,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 749.25
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 742.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 712.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 6,
+          "fp": 5,
+          "tn": 3,
+          "fn": 2,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5454545454545454,
+        "recall": 0.75,
+        "false_alarm_rate": 0.625,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.75,
+            "false_alerts_per_1000": 624.375
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.5,
+            "false_alerts_per_1000": 618.75
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 37.5,
+            "false_alerts_per_1000": 593.75
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "espd_bert",
+      "threshold": 0.0005340338102541864,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 4,
+          "tn": 0,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "false_alarm_rate": 1.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 999.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 990.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 950.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 8,
+          "fp": 4,
+          "tn": 4,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "espd_mobile",
+      "threshold": 0.002107861451804638,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 3,
+          "tn": 1,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "false_alarm_rate": 0.75,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 749.25
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 742.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 712.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 8,
+          "fp": 6,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "false_alarm_rate": 0.75,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 749.25
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 742.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 712.5
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "phocinae",
+      "threshold": 0.09504876285791397,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 1,
+          "tn": 3,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.8,
+        "recall": 1.0,
+        "false_alarm_rate": 0.25,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 249.75
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 247.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 237.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 8,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.625,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.625,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 6.25,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 31.25,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "toxic",
+      "threshold": 0.0008259828888852366,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 8,
+          "fp": 6,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "false_alarm_rate": 0.75,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 749.25
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 742.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 712.5
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "roberta",
+      "threshold": 0.1790272295475006,
+      "calibration": {
+        "counts": {
+          "tp": 4,
+          "fp": 2,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 5,
+          "fp": 4,
+          "tn": 4,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5555555555555556,
+        "recall": 0.625,
+        "false_alarm_rate": 0.5,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.625,
+            "false_alerts_per_1000": 499.5
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 6.25,
+            "false_alerts_per_1000": 495.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 31.25,
+            "false_alerts_per_1000": 475.0
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "synthetic_bullying",
+      "model": "llamaguard",
+      "threshold": null,
+      "calibration": {
+        "counts": {
+          "tp": 1,
+          "fp": 0,
+          "tn": 4,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.25,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.25,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 2.5,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 12.5,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 8,
+          "fn": 8,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": null,
+        "recall": 0.0,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "truncated": 0,
+      "room": 351,
+      "budget": 384,
+      "limitations": "Synthetic cases are researcher-authored and labels are not independently reviewed. Real-data splits are previously explored; PAN12 labels are author-derived and overlap model training. Llama safety labels differ from target task."
+    }
+  ]
+}

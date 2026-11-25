@@ -1,0 +1,209 @@
+{
+  "model": "Vogt BERT PANC INT8",
+  "sha256": "fe734331c4087e1fb81b8b7a9ab80ff29337db5df57b676fd5460a605c810447",
+  "labels": [
+    "non-predator",
+    "predator"
+  ],
+  "cases": [
+    {
+      "id": "g01",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9995666146278381,
+        0.00043342693243175745
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "g02",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9998586177825928,
+        0.00014137226389721036
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "g03",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9998310804367065,
+        0.0001688930206000805
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "g04",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9998691082000732,
+        0.00013090716674923897
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "b01",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9992030262947083,
+        0.0007969893049448729
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "b02",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.999481737613678,
+        0.0005182778695598245
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "b03",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.997831404209137,
+        0.0021685906685888767
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "b04",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9983421564102173,
+        0.0016578054055571556
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "t01",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.9594259858131409,
+        0.04057396948337555
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "t02",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.07484739273786545,
+        0.9251526594161987
+      ],
+      "argmax_label": "predator"
+    },
+    {
+      "id": "t03",
+      "researcher_label": "CONCERN",
+      "scores": [
+        0.99699866771698,
+        0.003001302247866988
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n01",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9998369216918945,
+        0.00016302420408464968
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n02",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9989469647407532,
+        0.001053039450198412
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n03",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9902757406234741,
+        0.009724226780235767
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n04",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9998351335525513,
+        0.00016486537060700357
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n05",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9994350075721741,
+        0.000564966001547873
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n06",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9994532465934753,
+        0.000546781811863184
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n07",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9996782541275024,
+        0.00032171615748666227
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n08",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.8592425584793091,
+        0.14075741171836853
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n09",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9997555613517761,
+        0.0002444135898258537
+      ],
+      "argmax_label": "non-predator"
+    },
+    {
+      "id": "n10",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.11469180881977081,
+        0.8853082060813904
+      ],
+      "argmax_label": "predator"
+    },
+    {
+      "id": "n11",
+      "researcher_label": "NO_CONCERN",
+      "scores": [
+        0.9119877219200134,
+        0.08801225572824478
+      ],
+      "argmax_label": "non-predator"
+    }
+  ],
+  "limitations": "Model source archive verification not established. Preprocessing is assumed BERT uncased and has not been checked against the original eSPD pipeline. Previously examined researcher-authored synthetic examples; author labels differ from grooming, bullying and threat labels."
+}

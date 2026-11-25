@@ -1,0 +1,427 @@
+{
+  "protocol": "CYBY24 exploratory Toxic-BERT and Vigil cascade",
+  "gate_threshold": 0.05783601641375838,
+  "truncated": {
+    "calibration": 148,
+    "evaluation": 174
+  },
+  "second_stage_calibration_rule": "Maximum precision at >=95% recall among calibration positives forwarded by the gate",
+  "policies": {
+    "publisher": {
+      "vigil_threshold": 0.007,
+      "calibration": {
+        "baseline": {
+          "counts": {
+            "tp": 91,
+            "fp": 217,
+            "tn": 223,
+            "fn": 18,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.29545454545454547,
+          "recall": 0.8348623853211009,
+          "false_alarm_rate": 0.49318181818181817,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.8348623853211009,
+              "false_alerts_per_1000": 492.68863636363636
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 8.34862385321101,
+              "false_alerts_per_1000": 488.25
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 41.74311926605505,
+              "false_alerts_per_1000": 468.52272727272725
+            }
+          ]
+        },
+        "cascade": {
+          "counts": {
+            "tp": 83,
+            "fp": 173,
+            "tn": 267,
+            "fn": 26,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.32421875,
+          "recall": 0.7614678899082569,
+          "false_alarm_rate": 0.3931818181818182,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.7614678899082569,
+              "false_alerts_per_1000": 392.7886363636364
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 7.614678899082569,
+              "false_alerts_per_1000": 389.25
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 38.07339449541284,
+              "false_alerts_per_1000": 373.52272727272725
+            }
+          ]
+        },
+        "second_stage_calls": 308,
+        "second_stage_call_rate": 0.5610200364298725,
+        "positives_missed_at_gate": 18,
+        "positives_rejected_at_second_stage": 8,
+        "false_alarms_removed_by_second_stage": 44
+      },
+      "evaluation": {
+        "baseline": {
+          "counts": {
+            "tp": 82,
+            "fp": 223,
+            "tn": 216,
+            "fn": 30,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.26885245901639343,
+          "recall": 0.7321428571428571,
+          "false_alarm_rate": 0.5079726651480638,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.7321428571428571,
+              "false_alerts_per_1000": 507.4646924829158
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 7.321428571428571,
+              "false_alerts_per_1000": 502.8929384965832
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 36.607142857142854,
+              "false_alerts_per_1000": 482.57403189066065
+            }
+          ]
+        },
+        "cascade": {
+          "counts": {
+            "tp": 62,
+            "fp": 178,
+            "tn": 261,
+            "fn": 50,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.25833333333333336,
+          "recall": 0.5535714285714286,
+          "false_alarm_rate": 0.4054669703872437,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.5535714285714286,
+              "false_alerts_per_1000": 405.06150341685645
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 5.5357142857142865,
+              "false_alerts_per_1000": 401.41230068337126
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 27.67857142857143,
+              "false_alerts_per_1000": 385.1936218678815
+            }
+          ]
+        },
+        "second_stage_calls": 305,
+        "second_stage_call_rate": 0.5535390199637024,
+        "positives_missed_at_gate": 30,
+        "positives_rejected_at_second_stage": 20,
+        "false_alarms_removed_by_second_stage": 45
+      },
+      "toxic_only_recalibrated": {
+        "threshold": 0.10282029805037035,
+        "minimum_calibration_recall": 0.7614678899082569,
+        "calibration": {
+          "counts": {
+            "tp": 84,
+            "fp": 186,
+            "tn": 254,
+            "fn": 25,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.3111111111111111,
+          "recall": 0.7706422018348624,
+          "false_alarm_rate": 0.42272727272727273,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.7706422018348624,
+              "false_alerts_per_1000": 422.30454545454546
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 7.706422018348624,
+              "false_alerts_per_1000": 418.5
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 38.53211009174312,
+              "false_alerts_per_1000": 401.59090909090907
+            }
+          ]
+        },
+        "evaluation": {
+          "counts": {
+            "tp": 73,
+            "fp": 183,
+            "tn": 256,
+            "fn": 39,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.28515625,
+          "recall": 0.6517857142857143,
+          "false_alarm_rate": 0.4168564920273349,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.6517857142857143,
+              "false_alerts_per_1000": 416.43963553530756
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 6.517857142857143,
+              "false_alerts_per_1000": 412.6879271070615
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 32.589285714285715,
+              "false_alerts_per_1000": 396.01366742596815
+            }
+          ]
+        }
+      }
+    },
+    "calibrated": {
+      "vigil_threshold": 0.0018,
+      "calibration": {
+        "baseline": {
+          "counts": {
+            "tp": 91,
+            "fp": 217,
+            "tn": 223,
+            "fn": 18,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.29545454545454547,
+          "recall": 0.8348623853211009,
+          "false_alarm_rate": 0.49318181818181817,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.8348623853211009,
+              "false_alerts_per_1000": 492.68863636363636
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 8.34862385321101,
+              "false_alerts_per_1000": 488.25
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 41.74311926605505,
+              "false_alerts_per_1000": 468.52272727272725
+            }
+          ]
+        },
+        "cascade": {
+          "counts": {
+            "tp": 88,
+            "fp": 200,
+            "tn": 240,
+            "fn": 21,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.3055555555555556,
+          "recall": 0.8073394495412844,
+          "false_alarm_rate": 0.45454545454545453,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.8073394495412844,
+              "false_alerts_per_1000": 454.09090909090907
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 8.073394495412845,
+              "false_alerts_per_1000": 450.0
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 40.36697247706422,
+              "false_alerts_per_1000": 431.8181818181818
+            }
+          ]
+        },
+        "second_stage_calls": 308,
+        "second_stage_call_rate": 0.5610200364298725,
+        "positives_missed_at_gate": 18,
+        "positives_rejected_at_second_stage": 3,
+        "false_alarms_removed_by_second_stage": 17
+      },
+      "evaluation": {
+        "baseline": {
+          "counts": {
+            "tp": 82,
+            "fp": 223,
+            "tn": 216,
+            "fn": 30,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.26885245901639343,
+          "recall": 0.7321428571428571,
+          "false_alarm_rate": 0.5079726651480638,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.7321428571428571,
+              "false_alerts_per_1000": 507.4646924829158
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 7.321428571428571,
+              "false_alerts_per_1000": 502.8929384965832
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 36.607142857142854,
+              "false_alerts_per_1000": 482.57403189066065
+            }
+          ]
+        },
+        "cascade": {
+          "counts": {
+            "tp": 71,
+            "fp": 203,
+            "tn": 236,
+            "fn": 41,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.2591240875912409,
+          "recall": 0.6339285714285714,
+          "false_alarm_rate": 0.4624145785876993,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.6339285714285714,
+              "false_alerts_per_1000": 461.9521640091116
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 6.3392857142857135,
+              "false_alerts_per_1000": 457.7904328018223
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 31.69642857142857,
+              "false_alerts_per_1000": 439.29384965831434
+            }
+          ]
+        },
+        "second_stage_calls": 305,
+        "second_stage_call_rate": 0.5535390199637024,
+        "positives_missed_at_gate": 30,
+        "positives_rejected_at_second_stage": 11,
+        "false_alarms_removed_by_second_stage": 20
+      },
+      "toxic_only_recalibrated": {
+        "threshold": 0.05783601641375838,
+        "minimum_calibration_recall": 0.8073394495412844,
+        "calibration": {
+          "counts": {
+            "tp": 91,
+            "fp": 217,
+            "tn": 223,
+            "fn": 18,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.29545454545454547,
+          "recall": 0.8348623853211009,
+          "false_alarm_rate": 0.49318181818181817,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.8348623853211009,
+              "false_alerts_per_1000": 492.68863636363636
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 8.34862385321101,
+              "false_alerts_per_1000": 488.25
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 41.74311926605505,
+              "false_alerts_per_1000": 468.52272727272725
+            }
+          ]
+        },
+        "evaluation": {
+          "counts": {
+            "tp": 82,
+            "fp": 223,
+            "tn": 216,
+            "fn": 30,
+            "abstain_positive": 0,
+            "abstain_negative": 0
+          },
+          "precision": 0.26885245901639343,
+          "recall": 0.7321428571428571,
+          "false_alarm_rate": 0.5079726651480638,
+          "coverage": 1.0,
+          "prevalence_scenarios": [
+            {
+              "assumed_prevalence": 0.001,
+              "true_alerts_per_1000": 0.7321428571428571,
+              "false_alerts_per_1000": 507.4646924829158
+            },
+            {
+              "assumed_prevalence": 0.01,
+              "true_alerts_per_1000": 7.321428571428571,
+              "false_alerts_per_1000": 502.8929384965832
+            },
+            {
+              "assumed_prevalence": 0.05,
+              "true_alerts_per_1000": 36.607142857142854,
+              "false_alerts_per_1000": 482.57403189066065
+            }
+          ]
+        }
+      }
+    }
+  },
+  "vigil_stage_host_wall_seconds": 576.495,
+  "limitations": "Previously explored CYBY24 source. The shared prefix has an unaudited Vigil token budget. Vigil starts a CLI process per call. The host runtime cannot estimate Android latency or battery use."
+}

@@ -1,0 +1,704 @@
+{
+  "results": [
+    {
+      "dataset": "grooming",
+      "model": "companion",
+      "threshold": 0.010816959664225578,
+      "calibration": {
+        "counts": {
+          "tp": 20,
+          "fp": 1,
+          "tn": 19,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.9523809523809523,
+        "recall": 1.0,
+        "false_alarm_rate": 0.05,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 49.95
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 49.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 47.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 19,
+          "fp": 1,
+          "tn": 19,
+          "fn": 1,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.95,
+        "recall": 0.95,
+        "false_alarm_rate": 0.05,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.95,
+            "false_alerts_per_1000": 49.95
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 9.5,
+            "false_alerts_per_1000": 49.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 47.5,
+            "false_alerts_per_1000": 47.5
+          }
+        ]
+      },
+      "truncated": 9,
+      "room": 93,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "grooming",
+      "model": "espd_bert",
+      "threshold": 0.04682071506977081,
+      "calibration": {
+        "counts": {
+          "tp": 18,
+          "fp": 0,
+          "tn": 20,
+          "fn": 2,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.9,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.9,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 9.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 45.0,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 14,
+          "fp": 1,
+          "tn": 19,
+          "fn": 6,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.9333333333333333,
+        "recall": 0.7,
+        "false_alarm_rate": 0.05,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7,
+            "false_alerts_per_1000": 49.95
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.0,
+            "false_alerts_per_1000": 49.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 35.0,
+            "false_alerts_per_1000": 47.5
+          }
+        ]
+      },
+      "truncated": 9,
+      "room": 93,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "grooming",
+      "model": "espd_mobile",
+      "threshold": 0.021975619718432426,
+      "calibration": {
+        "counts": {
+          "tp": 17,
+          "fp": 0,
+          "tn": 20,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.85,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.85,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.5,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.5,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 15,
+          "fp": 0,
+          "tn": 20,
+          "fn": 5,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.75,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.75,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.5,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 37.5,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "truncated": 9,
+      "room": 93,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "grooming",
+      "model": "phocinae",
+      "threshold": 0.9911577105522156,
+      "calibration": {
+        "counts": {
+          "tp": 18,
+          "fp": 0,
+          "tn": 20,
+          "fn": 2,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.9,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.9,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 9.0,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 45.0,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 15,
+          "fp": 0,
+          "tn": 20,
+          "fn": 5,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 1.0,
+        "recall": 0.75,
+        "false_alarm_rate": 0.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.75,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.5,
+            "false_alerts_per_1000": 0.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 37.5,
+            "false_alerts_per_1000": 0.0
+          }
+        ]
+      },
+      "truncated": 9,
+      "room": 93,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "grooming",
+      "model": "llamaguard",
+      "threshold": null,
+      "calibration": {
+        "counts": {
+          "tp": 1,
+          "fp": 4,
+          "tn": 16,
+          "fn": 19,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.2,
+        "recall": 0.05,
+        "false_alarm_rate": 0.2,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.05,
+            "false_alerts_per_1000": 199.8
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 0.5,
+            "false_alerts_per_1000": 198.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 2.5,
+            "false_alerts_per_1000": 190.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 0,
+          "fp": 6,
+          "tn": 14,
+          "fn": 20,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_alarm_rate": 0.3,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 299.7
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 297.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 0.0,
+            "false_alerts_per_1000": 285.0
+          }
+        ]
+      },
+      "truncated": 9,
+      "room": 93,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "bullying",
+      "model": "companion",
+      "threshold": 0.0018070241203531623,
+      "calibration": {
+        "counts": {
+          "tp": 17,
+          "fp": 14,
+          "tn": 6,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5483870967741935,
+        "recall": 0.85,
+        "false_alarm_rate": 0.7,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.85,
+            "false_alerts_per_1000": 699.3
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.5,
+            "false_alerts_per_1000": 693.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.5,
+            "false_alerts_per_1000": 665.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 14,
+          "fp": 16,
+          "tn": 4,
+          "fn": 6,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.4666666666666667,
+        "recall": 0.7,
+        "false_alarm_rate": 0.8,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.7,
+            "false_alerts_per_1000": 799.2
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 7.0,
+            "false_alerts_per_1000": 792.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 35.0,
+            "false_alerts_per_1000": 760.0
+          }
+        ]
+      },
+      "truncated": 64,
+      "room": 95,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "bullying",
+      "model": "espd_bert",
+      "threshold": 7.631257903994992e-05,
+      "calibration": {
+        "counts": {
+          "tp": 18,
+          "fp": 17,
+          "tn": 3,
+          "fn": 2,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5142857142857142,
+        "recall": 0.9,
+        "false_alarm_rate": 0.85,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.9,
+            "false_alerts_per_1000": 849.15
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 9.0,
+            "false_alerts_per_1000": 841.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 45.0,
+            "false_alerts_per_1000": 807.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 17,
+          "fp": 18,
+          "tn": 2,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.4857142857142857,
+        "recall": 0.85,
+        "false_alarm_rate": 0.9,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.85,
+            "false_alerts_per_1000": 899.1
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.5,
+            "false_alerts_per_1000": 891.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.5,
+            "false_alerts_per_1000": 855.0
+          }
+        ]
+      },
+      "truncated": 64,
+      "room": 95,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "bullying",
+      "model": "espd_mobile",
+      "threshold": 7.401296642228772e-08,
+      "calibration": {
+        "counts": {
+          "tp": 20,
+          "fp": 20,
+          "tn": 0,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "false_alarm_rate": 1.0,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 999.0
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 990.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 950.0
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 20,
+          "fp": 18,
+          "tn": 2,
+          "fn": 0,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.5263157894736842,
+        "recall": 1.0,
+        "false_alarm_rate": 0.9,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 1.0,
+            "false_alerts_per_1000": 899.1
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 10.0,
+            "false_alerts_per_1000": 891.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 50.0,
+            "false_alerts_per_1000": 855.0
+          }
+        ]
+      },
+      "truncated": 64,
+      "room": 95,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "bullying",
+      "model": "phocinae",
+      "threshold": 0.030052252113819122,
+      "calibration": {
+        "counts": {
+          "tp": 16,
+          "fp": 9,
+          "tn": 11,
+          "fn": 4,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.64,
+        "recall": 0.8,
+        "false_alarm_rate": 0.45,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.8,
+            "false_alerts_per_1000": 449.55
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.0,
+            "false_alerts_per_1000": 445.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 40.0,
+            "false_alerts_per_1000": 427.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 17,
+          "fp": 8,
+          "tn": 12,
+          "fn": 3,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.68,
+        "recall": 0.85,
+        "false_alarm_rate": 0.4,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.85,
+            "false_alerts_per_1000": 399.6
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 8.5,
+            "false_alerts_per_1000": 396.0
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 42.5,
+            "false_alerts_per_1000": 380.0
+          }
+        ]
+      },
+      "truncated": 64,
+      "room": 95,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    },
+    {
+      "dataset": "bullying",
+      "model": "llamaguard",
+      "threshold": null,
+      "calibration": {
+        "counts": {
+          "tp": 7,
+          "fp": 5,
+          "tn": 14,
+          "fn": 13,
+          "abstain_positive": 0,
+          "abstain_negative": 1
+        },
+        "precision": 0.5833333333333334,
+        "recall": 0.35,
+        "false_alarm_rate": 0.25,
+        "coverage": 0.975,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.35,
+            "false_alerts_per_1000": 249.75
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 3.5,
+            "false_alerts_per_1000": 247.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 17.5,
+            "false_alerts_per_1000": 237.5
+          }
+        ]
+      },
+      "evaluation": {
+        "counts": {
+          "tp": 6,
+          "fp": 3,
+          "tn": 17,
+          "fn": 14,
+          "abstain_positive": 0,
+          "abstain_negative": 0
+        },
+        "precision": 0.6666666666666666,
+        "recall": 0.3,
+        "false_alarm_rate": 0.15,
+        "coverage": 1.0,
+        "prevalence_scenarios": [
+          {
+            "assumed_prevalence": 0.001,
+            "true_alerts_per_1000": 0.3,
+            "false_alerts_per_1000": 149.85
+          },
+          {
+            "assumed_prevalence": 0.01,
+            "true_alerts_per_1000": 3.0,
+            "false_alerts_per_1000": 148.5
+          },
+          {
+            "assumed_prevalence": 0.05,
+            "true_alerts_per_1000": 15.0,
+            "false_alerts_per_1000": 142.5
+          }
+        ]
+      },
+      "truncated": 64,
+      "room": 95,
+      "limitations": "Exploratory balanced sample, 20 positive and 20 negative per split; PAN12 labels derived from author and authors train on PAN12/PANC; previously inspected data, overlap and input preprocessing unverified; Llama safety labels differ from target task."
+    }
+  ]
+}
